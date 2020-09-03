@@ -1,6 +1,7 @@
 # schooldevice
-shellscript to modify a linuxdistribution for use in school with one single offline account for multiple users
-the single offline account acts like a selfhealing account with a reset of all data after restart
+Shellscript to modify a linuxdistribution for use in school with one single offline account for multiple users.
+
+The single offline account acts like a selfhealing account with a reset of all data after restart
 ## Getting Started
 - Install a new linux system (testet with <a href=https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current-live/amd64/iso-hybrid/>debian 10.1.0-amd64-xfce+nonfree.iso</a>)
 - (optional) make your own changes to the fresh installed system
