@@ -38,7 +38,7 @@ sudo update-rc.d resethomedir.sh defaults
 sudo /etc/init.d/resethomedir.sh save
 
 #### set autologin of user user0
-sudo mkdir /etc/lightdm/lightdm.conf.d//
+sudo mkdir /etc/lightdm/lightdm.conf.d/
 sudo echo '[Seat:*]' > /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo 'autologin-user=user0' >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo 'autologin-user-timeout=0' >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
