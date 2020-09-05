@@ -3,7 +3,7 @@ Shellscript to modify a linuxdistribution for use in school with one single offl
 
 The single offline account acts like a selfhealing account with a reset of all data after restart
 ## Getting Started
-- Install a new linux system (testet with <a href=https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current-live/amd64/iso-hybrid/>debian 10.1.0-amd64-xfce+nonfree.iso</a>)
+- Install a new linux system based on a debian distrubution (testet with <a href=https://xubuntu.org/>Xubuntu 20.4 LTS 64bit</a>)
 - (optional) make your own changes to the fresh installed system
 ## Installing
 - Install git
