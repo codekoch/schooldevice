@@ -48,9 +48,9 @@ sudo echo "xserver-command=X -s 0 dpms">> /etc/lightdm/lightdm.conf.d/60-autolog
 green_msg "->DONE!"
 
 yellow_msg "Do you wish to install additional software (see: https://github.com/codekoch/schooldevice/blob/master/software.sh)?"
-select yn in "Yes" "No"; do
+select yn in "y(es)" "n(o)"; do
     case $yn in
-        Yes ) ./software.sh; break;;
-        No ) exit;;
+        y ) ./software.sh; break;;
+        n ) exit;;
     esac
 done
