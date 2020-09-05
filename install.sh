@@ -45,5 +45,12 @@ sudo echo 'autologin-user-timeout=0' >> /etc/lightdm/lightdm.conf.d/60-autologin
 sudo echo "# don't sleep the screen" >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo "xserver-command=X -s 0 dpms">> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 
-yellow_msg "->DONE!"
+green_msg "->DONE!"
 
+yellow_msg "Do you wish to install additional software (see: https://github.com/codekoch/schooldevice/blob/master/software.sh)?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) ./software.sh; break;;
+        No ) exit;;
+    esac
+done
