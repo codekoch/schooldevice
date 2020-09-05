@@ -6,6 +6,7 @@ The single offline account acts like a selfhealing account with a reset of all d
 - Install a new linux system based on a debian distrubution (testet with <a href=https://xubuntu.org/>Xubuntu 20.4 LTS 64bit</a>)
 - (optional) make your own changes to the fresh installed system
 ## Installing
+- Open a terminal
 - Install git
 > sudo apt-get install git
 - Clone this repository
