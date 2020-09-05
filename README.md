@@ -26,7 +26,7 @@ The single offline account acts like a selfhealing account with a reset of all d
 > sudo shutdown -r now
 - Have fun with your new schooldevice 
 ## Hints
-- The selfhealing account is user0 with passwort user0 
+- The selfhealing accounts username is user0 with passwort user0 
 - login in as a user with admin rights and use 
 
 > sudo /etc/init.d/resethomedir.sh save
