@@ -1,13 +1,13 @@
 #!/bin/bash
 sudo apt-get update
 sudo apt-get -y upgrade
-# netbeans
+
 sudo apt-get install -y netbeans
-#blender
+
 sudo apt-get install -y blender
-# cura 
+
 sudo apt-get install -y cura
-# ballerburg
+
 sudo apt-get install ballerburg
 
 sudo apt-get install -y qrencode
@@ -44,7 +44,6 @@ sudo apt install -y ./google-chrome-stable_current_amd64.deb
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak install -y flathub ch.openboard.OpenBoard
 sudo cp openboard.png /usr/share/pixmaps/
-sudo cp sources/home/mk/Desktop/* /usr/share/applications/
 echo '[Desktop Entry]' > /usr/share/applications/openboard.desktop
 echo 'Name=OpenBoard' >> /usr/share/applications/openboard.desktop
 echo 'Comment=OpenBoard' >> /usr/share/applications/openboard.desktop
