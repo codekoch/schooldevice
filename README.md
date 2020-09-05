@@ -18,8 +18,8 @@ The single offline account acts like a selfhealing account with a reset of all d
 > sudo shutdown -r now
 - Choose default panel when asked for
 - Customize everything according to your needs
-- Open a terminal, save the current account settings and restart system
-> su
+- Open a terminal,login as a user with admin rights,save the current account settings and restart system
+> su <user with admin rights>
 
 > sudo /etc/init.d/resethomedir.sh save
 
