@@ -13,9 +13,7 @@ The single offline account acts like a selfhealing account with a reset of all d
 - Start the install shellscript as root 
 > cd schooldevice
 
-> su
-
-> ./install.sh
+> sudo ./install.sh
 - Restart to autologin into the new account
 > sudo shutdown -r now
 - Choose default panel when asked for
