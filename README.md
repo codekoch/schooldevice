@@ -17,9 +17,9 @@ The single offline account acts like a selfhealing account with a reset of all d
 > chmod -R 755 *
 
 > sudo ./install.sh
+- Decide if you want to install the additional software pack (see https://github.com/codekoch/schooldevice/blob/master/software.sh)
 - Restart to autologin into the new account user0
 > sudo shutdown -r now
-- Choose default panel when asked for
 - Customize everything according to your needs
 - Open a terminal, login as a user with admin rights, save the current account settings of user0 and restart system
 > su {user with admin rights}
