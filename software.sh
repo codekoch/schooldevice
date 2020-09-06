@@ -40,6 +40,10 @@ sudo apt-get install -y vlc
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
+#### Greenfoot
+wget http://www.greenfoot.org/download/files/Greenfoot-linux-361.deb
+sudo apt install -y ./Greenfoot-linux-361.deb
+
 #### Openboard
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak install -y flathub ch.openboard.OpenBoard
