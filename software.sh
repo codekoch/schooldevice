@@ -44,6 +44,12 @@ sudo apt install -y ./google-chrome-stable_current_amd64.deb
 wget http://www.greenfoot.org/download/files/Greenfoot-linux-361.deb
 sudo apt install -y ./Greenfoot-linux-361.deb
 
+#### unetbootin
+sudo add-apt-repository ppa:gezakovacs/ppa -y
+
+sudo apt-get update
+
+sudo apt-get install -y unetbootin
 #### Openboard
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak install -y flathub ch.openboard.OpenBoard
