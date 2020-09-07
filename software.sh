@@ -46,10 +46,25 @@ sudo apt install -y ./Greenfoot-linux-361.deb
 
 #### unetbootin
 sudo add-apt-repository ppa:gezakovacs/ppa -y
-
 sudo apt-get update
-
 sudo apt-get install -y unetbootin
+
+#### Linux Live Kit
+sudo apt-get install -y squashfs-tools
+sudo apt-get install -y genisoimage 
+sudo apt-get install -y zip 
+sudo apt-get install -y aufs-dkms 
+sudo apt-get install -y dkms
+git clone https://github.com/Tomas-M/linux-live
+sudo mkdir /a
+sudo  sed -i 's|LIVEKITDATA=/tmp|LIVEKITDATA=/a|g' linux-live/config
+sudo cp -R linux-live /opt/
+sudo chmod -R 755 /opt/linux-live
+sudo echo '#!/bin/bash' > /usr/bin/buildLinuxLive.sh
+sudo echo 'cd /opt/linux-live' >> /usr/bin/buildLinuxLive.sh
+sudo echo './build' >> /usr/bin/buildLinuxLive.sh
+sudo chmod 755 /usr/bin/buildLinuxLive.sh
+
 #### Openboard
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak install -y flathub ch.openboard.OpenBoard
