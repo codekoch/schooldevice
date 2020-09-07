@@ -57,6 +57,7 @@ sudo apt-get install -y aufs-dkms
 sudo apt-get install -y dkms
 git clone https://github.com/Tomas-M/linux-live
 sudo mkdir /a
+sudo  sed -i 's/VMLINUZ=\/vmlinuz/VMLINUZ=\/boot\/vmlinuz/g' linux-live/config
 sudo  sed -i 's|LIVEKITDATA=/tmp|LIVEKITDATA=/a|g' linux-live/config
 sudo cp -R linux-live /opt/
 sudo chmod -R 755 /opt/linux-live
