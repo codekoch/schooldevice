@@ -1,5 +1,5 @@
-# schooldevice
 ![schooldevice](https://github.com/codekoch/schooldevice/blob/master/schooldevice.jpg)
+# schooldevice
 Shellscript to modify a linuxdistribution for use in school with one single offline account for multiple users.
 
 The single offline account acts like a selfhealing account with a reset of all data after restart
