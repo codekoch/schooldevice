@@ -70,7 +70,7 @@ sudo echo 'while ! pidof xfce4-panel >> /dev/null ;' >> /home/.saves/user0/setba
 sudo echo 'do' >> /home/.saves/user0/setbackground.sh
 sudo echo 'sleep 1' >> /home/.saves/user0/setbackground.sh
 sudo echo 'done' >> /home/.saves/user0/setbackground.sh
-sudo echo 'sleep 5' >> /home/.saves/user0/setbackground.sh
+##sudo echo 'sleep 5' >> /home/.saves/user0/setbackground.sh
 sudo echo 'xfconf-query --channel xfce4-desktop --list | grep last-image | while read path; do ' >> /home/.saves/user0/setbackground.sh
 sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set /usr/share/backgrounds/xfce/schooldevice.png' >> /home/.saves/user0/setbackground.sh
 sudo echo ' done ' >> /home/.saves/user0/setbackground.sh
