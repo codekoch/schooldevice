@@ -57,7 +57,11 @@ sudo echo 'Comment=Startup Script' >> /home/.saves/user0/.config/autostart/notif
 sudo cp scripts/notify.sh /home/.saves/user0/
 sudo chmod 755  /home/.saves/user0/notify.sh
 
-green_msg "->DONE!"
+#### set new user background
+sudo cp schooldevice.jpg /usr/share/backgrounds/xfce/
+sudo chmod 755 /usr/share/backgrounds/xfce/schooldevice.jpg
+sudo echo 'xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor0/image-path --set /usr/share/backgrounds/xfce/schooldevice.jpg' >> /home/.saves/user0/notify.sh
+
 
 yellow_msg "Do you wish to install additional software (see: https://github.com/codekoch/schooldevice/blob/master/software.sh)?"
 echo -n "(y/n)? "
