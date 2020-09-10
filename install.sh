@@ -60,7 +60,18 @@ sudo chmod 755  /home/.saves/user0/notify.sh
 #### set new user background
 sudo cp schooldevice.jpg /usr/share/backgrounds/xfce/
 sudo chmod 755 /usr/share/backgrounds/xfce/schooldevice.jpg
-sudo echo 'sudo -u user0 -g $( id -g user0 ) xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor0/image-path --set /usr/share/backgrounds/xfce/schooldevice.jpg' >> /etc/rc.local
+sudo echo '#!/bin/bash' > /home/.saves/user0/setbackground.sh
+sudo echo 'xfconf-query --channel xfce4-desktop --list | grep last-image | while read path; do ' >> /home/.saves/user0/setbackground.sh
+sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set /usr/share/backgrounds/xfce/schooldevice.jpg' >> /home/.saves/user0/setbackground.sh
+sudo echo ' done ' >> /home/.saves/user0/setbackground.sh
+sudo chmod 755  /home/.saves/user0/setbackground.sh
+sudo echo '[Desktop Entry]' > /home/.saves/user0/.config/autostart/background.desktop
+sudo echo 'Type=Application' >> /home/.saves/user0/.config/autostart/background.desktop
+sudo echo 'Exec=/home/user0/setbackground.sh' >> /home/.saves/user0/.config/autostart/background.desktop
+sudo echo 'Hidden=false' >> /home/.saves/user0/.config/autostart/background.desktop
+sudo echo 'NoDisplay=false' >> /home/.saves/user0/.config/autostart/background.desktop
+sudo echo 'Name=myscript' >> /home/.saves/user0/.config/autostart/background.desktop
+sudo echo 'Comment=Startup Script' >> /home/.saves/user0/.config/autostart/background.desktop
 
 
 yellow_msg "Do you wish to install additional software (see: https://github.com/codekoch/schooldevice/blob/master/software.sh)?"
