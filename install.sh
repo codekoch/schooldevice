@@ -66,6 +66,7 @@ yellow_msg "set background for user0"
 sudo cp schooldevice.png /usr/share/backgrounds/xfce/
 sudo chmod 755 /usr/share/backgrounds/xfce/schooldevice.png
 sudo echo '#!/bin/bash' > /home/.saves/user0/setbackground.sh
+sudo echo 'sleep 3' >> /home/.saves/user0/setbackground.sh
 sudo echo 'xfconf-query --channel xfce4-desktop --list | grep last-image | while read path; do ' >> /home/.saves/user0/setbackground.sh
 sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set /usr/share/backgrounds/xfce/schooldevice.png' >> /home/.saves/user0/setbackground.sh
 sudo echo ' done ' >> /home/.saves/user0/setbackground.sh
