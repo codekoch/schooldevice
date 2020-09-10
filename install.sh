@@ -46,6 +46,7 @@ sudo echo "# don't sleep the screen" >> /etc/lightdm/lightdm.conf.d/60-autologin
 sudo echo "xserver-command=X -s 0 dpms">> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 
 #### Notify that you are in a selfhealing account
+sudo mkdir /home/.saves/user0/.config/
 sudo mkdir /home/.saves/user0/.config/autostart/
 sudo echo '[Desktop Entry]' > /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'Type=Application' >> /home/.saves/user0/.config/autostart/notify.desktop
