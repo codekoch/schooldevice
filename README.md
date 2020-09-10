@@ -36,3 +36,7 @@ The single offline account acts like a selfhealing account with a reset of all d
 > sudo /etc/init.d/resethomedir.sh save
 
 to save permanent changes   
+- To build a Takeaway System (needs additional software pack):
+    - >su {user with admin rights}
+    - >sudo mount /dev/{yourdevice} /a
+    - >/usr/bin/buildLinuxLive.sh
