@@ -66,11 +66,6 @@ yellow_msg "set background for user0"
 sudo cp schooldevice.png /usr/share/backgrounds/xfce/
 sudo chmod 755 /usr/share/backgrounds/xfce/schooldevice.png
 sudo echo '#!/bin/bash' > /home/.saves/user0/setbackground.sh
-sudo echo 'while ! pidof xfce4-panel >> /dev/null ;' >> /home/.saves/user0/setbackground.sh
-sudo echo 'do' >> /home/.saves/user0/setbackground.sh
-sudo echo 'sleep 1' >> /home/.saves/user0/setbackground.sh
-sudo echo 'done' >> /home/.saves/user0/setbackground.sh
-sudo echo 'sleep 4' >> /home/.saves/user0/setbackground.sh
 sudo echo 'xfconf-query --channel xfce4-desktop --list | grep last-image | while read path; do ' >> /home/.saves/user0/setbackground.sh
 sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set /usr/share/backgrounds/xfce/schooldevice.png' >> /home/.saves/user0/setbackground.sh
 sudo echo ' done ' >> /home/.saves/user0/setbackground.sh
@@ -78,14 +73,8 @@ sudo echo 'xfconf-query --channel xfce4-desktop --list | grep image-style | whil
 sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set 1' >> /home/.saves/user0/setbackground.sh
 sudo echo ' done ' >> /home/.saves/user0/setbackground.sh
 sudo chmod 755  /home/.saves/user0/setbackground.sh
-sudo echo '[Desktop Entry]' > /home/.saves/user0/.config/autostart/background.desktop
-sudo echo 'Type=Application' >> /home/.saves/user0/.config/autostart/background.desktop
-sudo echo 'Exec=/home/user0/setbackground.sh' >> /home/.saves/user0/.config/autostart/background.desktop
-sudo echo 'Hidden=false' >> /home/.saves/user0/.config/autostart/background.desktop
-sudo echo 'NoDisplay=false' >> /home/.saves/user0/.config/autostart/background.desktop
-sudo echo 'Name=myscript' >> /home/.saves/user0/.config/autostart/background.desktop
-sudo echo 'Comment=Startup Script' >> /home/.saves/user0/.config/autostart/background.desktop
-sudo chmod 755 /home/.saves/user0/.config/autostart/background.desktop
+sudo echo '/home/user0/setbackground.sh &' >> /home/.saves/user0/notify.sh
+
 
 yellow_msg "Do you wish to install additional software (see: https://github.com/codekoch/schooldevice/blob/master/software.sh)?"
 echo -n "(y/n)? "
