@@ -2,7 +2,9 @@
 sudo apt-get update
 sudo apt-get -y upgrade
 
-sudo apt-get install -y netbeans
+sudo apt install default-jdk
+
+sudo snap install netbeans --classic
 
 sudo apt-get install -y blender
 
