@@ -37,6 +37,7 @@ sudo cp scripts/resethomedir.sh /etc/init.d/
 chmod 777 /etc/init.d/resethomedir.sh
 sudo update-rc.d resethomedir.sh defaults
 sudo /etc/init.d/resethomedir.sh save
+sudo  sed -i 's/Required-Stop:     $local_fs $remote_fs dbus/Required-Stop:     $local_fs $remote_fs dbus resethomedir.sh/g' /etc/init.d/lightdm
 
 #### set autologin of user user0
 yellow_msg "set autologin for user0"
