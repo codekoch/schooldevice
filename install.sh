@@ -25,6 +25,7 @@ if [ $1 = "update" ]; then
   yellow_msg "Restore system with snapshot $snapshotname..."
   sudo timeshift --restore --snapshot $snapshotname --yes
   yellow_msg "Continue with new installation of schooldevice ..."
+  exit
 else
    if [ -f ./snapshotname.txt ]; then
         sudo timeshift --delete-all --yes
