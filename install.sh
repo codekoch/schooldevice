@@ -25,6 +25,7 @@ if [ $1 = "reset" ]; then
   yellow_msg "Continue with new installation of schooldevice ..."
 else
    if [ -f ./snapshotname.txt ]; then
+        yellow_msg "removing old snapshot ..." 
         sudo timeshift --delete-all --yes
         $snapshotname = `cat snapshotname.txt`
         sudo timeshift --delete --snapshot $snapshotname
