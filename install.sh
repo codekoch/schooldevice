@@ -1,4 +1,5 @@
 #!/bin/bash
+$version = 'schooldevice 1.0'
 ## Get some colors
 function red_msg() {
 echo -e "\\033[31;1m${@}\033[0m"
@@ -101,6 +102,9 @@ sudo echo ' done ' >> /home/.saves/user0/setbackground.sh
 sudo echo 'xset s off' >> /home/.saves/user0/setbackground.sh
 sudo echo 'xset s noblank' >> /home/.saves/user0/setbackground.sh
 sudo echo 'xset -dpms' >> /home/.saves/user0/setbackground.sh
+sudo echo 'notify-send "You are working with '$version'"' >> /home/.saves/user0/setbackground.sh  
+sudo echo 'sleep 60'' >> /home/.saves/user0/setbackground.sh                                                
+sudo echo 'pkill notify-send' >> /home/.saves/user0/setbackground.sh
 sudo chmod 755  /home/.saves/user0/setbackground.sh
 sudo echo '/home/user0/setbackground.sh &' >> /home/.saves/user0/notify.sh
 
