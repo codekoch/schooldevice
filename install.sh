@@ -1,5 +1,5 @@
 #!/bin/bash
-$version = 'schooldevice 1.0'
+version = 'schooldevice 1.0'
 ## Get some colors
 function red_msg() {
 echo -e "\\033[31;1m${@}\033[0m"
@@ -22,7 +22,7 @@ if [ $1 = "update" ]; then
   git fetch --all
   git reset --hard origin/master
   git pull
-  $snapshotname = `cat snapshotname.txt` 
+  snapshotname = "`cat snapshotname.txt`" 
   yellow_msg "Restore system with snapshot $snapshotname..."
   sudo timeshift --restore --snapshot $snapshotname --yes
   yellow_msg "Continue with new installation of schooldevice ..."
