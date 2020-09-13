@@ -16,30 +16,30 @@ function blue_msg() {
 echo -e "\\033[34;1m${@}\033[0m"
 }
 
-#### installation of timeshift
-if [ $1 = "update" ]; then
-  yellow_msg "Updating...Press Enter when prompted"
-  git fetch --all
-  git reset --hard origin/master
-  git pull
-  snapshotname="`cat snapshotname.txt`" 
-  yellow_msg "Restore system with snapshot $snapshotname..."
-  sudo timeshift --restore --snapshot $snapshotname --yes
-  yellow_msg "Continue with new installation of schooldevice ..."
-  exit
-else
-   if [ -f ./snapshotname.txt ]; then
-        sudo timeshift --delete-all --yes
-        $snapshotname = `cat snapshotname.txt`
-        sudo timeshift --delete --snapshot $snapshotname
-   else
-        yellow_msg "adding timeshift ability ..." 
-        sudo apt-get install -y timeshift
-    fi  
-   yellow_msg "Creating snapshot of current system ...[this will take a while...time for a coffee!]"  
-   sudo timeshift --create --yes
-   sudo timeshift --list | grep -i ">" | awk '{print $3}' > ./snapshotname.txt
-fi
+#### installation of timeshift (experimental and still not working)
+#if [ $1 = "update" ]; then
+#  yellow_msg "Updating...Press Enter when prompted"
+#  git fetch --all
+#  git reset --hard origin/master
+#  git pull
+#  snapshotname="`cat snapshotname.txt`" 
+#  yellow_msg "Restore system with snapshot $snapshotname..."
+#  sudo timeshift --restore --snapshot $snapshotname --yes
+#  yellow_msg "Continue with new installation of schooldevice ..."
+#  exit
+#else
+#   if [ -f ./snapshotname.txt ]; then
+#        sudo timeshift --delete-all --yes
+#        $snapshotname = `cat snapshotname.txt`
+#        sudo timeshift --delete --snapshot $snapshotname
+#   else
+#        yellow_msg "adding timeshift ability ..." 
+#        sudo apt-get install -y timeshift
+#    fi  
+#   yellow_msg "Creating snapshot of current system ...[this will take a while...time for a coffee!]"  
+#   sudo timeshift --create --yes
+#   sudo timeshift --list | grep -i ">" | awk '{print $3}' > ./snapshotname.txt
+#fi
 
 #### add user user
 yellow_msg "adding user user0 with password user0..." 
