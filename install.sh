@@ -26,11 +26,19 @@ if [ "$1" == "reset" ]; then
     yellow_msg "Continue with new installation of schooldevice ..."
 else
    if [ -f ./snapshotname.txt ]; then
-        #snapshotname="`cat snapshotname.txt`"
-        # yellow_msg "removing old snapshot $snapshotname ..." 
-        # sudo timeshift --delete --snapshot $snapshotname
-        yellow_msg "found old snapshot $snapshotname ..." 
-   else
+        snapshotname="`cat snapshotname.txt`"
+        yellow_msg "searching for old snapshot $snapshotname ..." 
+        test=`sudo timeshift --list | grep -i ">" grep -i "$snapshotname | awk '{print $3}'´ 
+        if [ "$test" == "$snapshotname" ]; then
+           yellow_msg "found old snapshot $snapshotname ..."
+        else
+          yellow_msg "adding timeshift ability ..." 
+          sudo apt-get install -y timeshift
+          yellow_msg "Creating snapshot of current system ...[this will take a while...time for a coffee!]"  
+          sudo timeshift --create --yes
+          sudo timeshift --list | grep -i ">" | awk '{print $3}' > ./snapshotname.txt
+        fi
+    else
         yellow_msg "adding timeshift ability ..." 
         sudo apt-get install -y timeshift
         yellow_msg "Creating snapshot of current system ...[this will take a while...time for a coffee!]"  
