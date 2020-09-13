@@ -1,6 +1,6 @@
 ![schooldevice](https://github.com/codekoch/schooldevice/blob/master/schooldevice.jpg)
 # schooldevice
-This project should show that it is possible to get a working operating system for school use without the usual big companies and account bindings. This should be a matter of course for the educational mission of every school and teacher.  
+This project should show that it is possible to get a working operating system for school use without the usual big commercial companies and account bindings. This should be a matter of course for the educational mission of every school and teacher.  
 
 schooldevice is a shellscript to modify a linuxdistribution for use in school with one single offline account for multiple users.
 The single offline account acts like a selfhealing account with a reset of all data after restart
