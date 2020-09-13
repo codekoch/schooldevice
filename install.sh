@@ -18,7 +18,7 @@ echo -e "\\033[34;1m${@}\033[0m"
 
 #### installation of timeshift
 if [ $1 = "update" ]; then
-  yellow_msg "Updating..."
+  yellow_msg "Updating...Press Enter when prompted"
   git fetch --all
   git reset --hard origin/master
   git pull
