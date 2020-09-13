@@ -1,11 +1,15 @@
 #!/bin/bash
 
+### via snap 
 sudo apt-get install -y default-jdk
 
 sudo snap install netbeans --classic
 
 sudo snap install blender --classic
 
+sudo snap install openboard
+
+### via apt-get 
 sudo apt-get install -y cura
 
 sudo apt-get install -y ballerburg
@@ -67,7 +71,6 @@ sudo echo './build' >> /usr/bin/buildLinuxLive.sh
 sudo chmod 755 /usr/bin/buildLinuxLive.sh
 
 #### Openboard
-sudo snap install openboard
 #sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 #sudo flatpak install -y flathub ch.openboard.OpenBoard
 #sudo cp openboard.png /usr/share/pixmaps/
