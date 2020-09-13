@@ -17,6 +17,12 @@ echo -e "\\033[34;1m${@}\033[0m"
 yellow_msg "adding timeshift ability ..." 
 sudo apt-get install -y timeshift
 
+#if [ $1 = "update" ]; then
+#  sudo timeshift --restore --snap 
+#else
+#  sudo timeshift --create
+#fi
+
 #### add user user
 yellow_msg "adding user user0 with password user0..." 
 sudo adduser user0 << EOF 
