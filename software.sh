@@ -67,15 +67,16 @@ sudo echo './build' >> /usr/bin/buildLinuxLive.sh
 sudo chmod 755 /usr/bin/buildLinuxLive.sh
 
 #### Openboard
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpak install -y flathub ch.openboard.OpenBoard
-sudo cp openboard.png /usr/share/pixmaps/
-echo '[Desktop Entry]' > /usr/share/applications/openboard.desktop
-echo 'Name=OpenBoard' >> /usr/share/applications/openboard.desktop
-echo 'Comment=OpenBoard' >> /usr/share/applications/openboard.desktop
-echo 'Type=Application' >> /usr/share/applications/openboard.desktop
-echo 'Encoding=UTF-8' >> /usr/share/applications/openboard.desktop
-echo 'Exec=/usr/bin/flatpak run ch.openboard.OpenBoard' >> /usr/share/applications/openboard.desktop
-echo 'Icon=/usr/share/pixmaps/openboard.png' >> /usr/share/applications/openboard.desktop
-echo 'Categories=GNOME;Application;Education;' >> /usr/share/applications/openboard.desktopecho 'Terminal=false' >> /usr/share/applications/openboard.desktop
-echo 'StartupNotify=true' >> /usr/share/applications/openboard.desktop
+sudo snap install openboard
+#sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#sudo flatpak install -y flathub ch.openboard.OpenBoard
+#sudo cp openboard.png /usr/share/pixmaps/
+#echo '[Desktop Entry]' > /usr/share/applications/openboard.desktop
+#echo 'Name=OpenBoard' >> /usr/share/applications/openboard.desktop
+#echo 'Comment=OpenBoard' >> /usr/share/applications/openboard.desktop
+#echo 'Type=Application' >> /usr/share/applications/openboard.desktop
+#echo 'Encoding=UTF-8' >> /usr/share/applications/openboard.desktop
+#echo 'Exec=/usr/bin/flatpak run ch.openboard.OpenBoard' >> /usr/share/applications/openboard.desktop
+#echo 'Icon=/usr/share/pixmaps/openboard.png' >> /usr/share/applications/openboard.desktop
+#echo 'Categories=GNOME;Application;Education;' >> /usr/share/applications/openboard.desktopecho 'Terminal=false' >> /usr/share/applications/openboard.desktop
+#echo 'StartupNotify=true' >> /usr/share/applications/openboard.desktop
