@@ -30,7 +30,7 @@ else
         yellow_msg "searching for old snapshot $snapshotname ..." 
         test=`sudo timeshift --list | grep -i ">" | grep -i "$snapshotname" | awk '{print $3}'` 
         if [ "$test" == "$snapshotname" ]; then
-           yellow_msg "found old snapshot $snapshotname ..."
+           yellow_msg "found old snapshot $snapshotname. No need for new snapshot ..."
         else
           yellow_msg "adding timeshift ability ..." 
           sudo apt-get install -y timeshift
