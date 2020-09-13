@@ -18,9 +18,11 @@ yellow_msg "adding timeshift ability ..."
 sudo apt-get install -y timeshift
 
 #if [ $1 = "update" ]; then
+#  
 #  sudo timeshift --restore --snap 
 #else
-#  sudo timeshift --create
+#   sudo timeshift --create 
+#   sudo timeshift --list | grep -i ">" | awk '{print $3}' > snapshotname.txt
 #fi
 
 #### add user user
