@@ -19,9 +19,11 @@ sudo apt-get install -y timeshift
 
 #if [ $1 = "update" ]; then
 #  $snapshotname = `cat snapshotname.txt` 
-#  sudo timeshift --restore --snap $snapshotname
+#  sudo timeshift --restore --snap $snapshotname --yes
 #else
-#   sudo timeshift --create 
+#   $snapshotname = `cat snapshotname.txt`
+#   sudo timeshift --delete-all --yes 
+#   sudo timeshift --create --yes
 #   sudo timeshift --list | grep -i ">" | awk '{print $3}' > snapshotname.txt
 #fi
 
