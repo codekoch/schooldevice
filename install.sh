@@ -18,14 +18,12 @@ echo -e "\\033[34;1m${@}\033[0m"
 }
 
 #### installation of timeshift (experimental and still not working)
-if [ -z "$1" ]; then
-  if [ "$1" == "reset" ]; then
+if [ "$1" == "reset" ]; then
     yellow_msg "Reset...Press Enter when prompted"
     snapshotname="`cat snapshotname.txt`" 
     yellow_msg "Restore system with snapshot $snapshotname..."
     sudo timeshift --restore --snapshot $snapshotname --yes
     yellow_msg "Continue with new installation of schooldevice ..."
-  fi
 else
    if [ -f ./snapshotname.txt ]; then
         snapshotname="`cat snapshotname.txt`"
