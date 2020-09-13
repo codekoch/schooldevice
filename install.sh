@@ -18,8 +18,8 @@ yellow_msg "adding timeshift ability ..."
 sudo apt-get install -y timeshift
 
 #if [ $1 = "update" ]; then
-#  
-#  sudo timeshift --restore --snap 
+#  $snapshotname = `cat snapshotname.txt` 
+#  sudo timeshift --restore --snap $snapshotname
 #else
 #   sudo timeshift --create 
 #   sudo timeshift --list | grep -i ">" | awk '{print $3}' > snapshotname.txt
