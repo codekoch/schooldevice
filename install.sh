@@ -14,9 +14,8 @@ echo -e "\\033[33;1m${@}\033[0m"
 function blue_msg() {
 echo -e "\\033[34;1m${@}\033[0m"
 }
-yellow_msg "adding timeshift ability ..." 
-sudo apt-get install -y timeshift
 
+#### installation of timeshift
 #if [ $1 = "update" ]; then
 #  yellow_msg "Updating..."
 #  git fetch --all
@@ -29,8 +28,12 @@ sudo apt-get install -y timeshift
 #   if [ -f ./snapshotname.txt ]; then
 #        sudo timeshift --delete-all --yes
 #        $snapshotname = `cat snapshotname.txt`
-#           sudo timeshift --delete --snapshot $snapshotname
-#   fi  
+#        sudo timeshift --delete --snapshot $snapshotname
+#   else
+#        yellow_msg "adding timeshift ability ..." 
+#        sudo apt-get install -y timeshift
+#    fi  
+#    
 #   sudo timeshift --create --yes
 #   sudo timeshift --list | grep -i ">" | awk '{print $3}' > ./snapshotname.txt
 #fi
