@@ -2,7 +2,7 @@
  
 sleep 10                                               
  
-notify-send "ACHTUNG:" "Alle lokalen Veränderungen am System gehen beim Logout verloren! Bitte sichern Sie ihre Daten auf einem externen Datenträger."   
+notify-send "ATTENTION:" "All local data will be lost during logout or restart! Make sure your data is backed up in the cloud or on an external device if necessary."   
  
 sleep 60                                                
  
