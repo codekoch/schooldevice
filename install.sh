@@ -18,15 +18,21 @@ yellow_msg "adding timeshift ability ..."
 sudo apt-get install -y timeshift
 
 #if [ $1 = "update" ]; then
+#  yellow_msg "Updating..."
 #  git fetch --all
-#  git reset --hard origin/master 
+#  git reset --hard origin/master
 #  $snapshotname = `cat snapshotname.txt` 
+#  yellow_msg "Restore system with snapshot $snapshotname..."
 #  sudo timeshift --restore --snap $snapshotname --yes
+#  yellow_msg "Continue with new installation of schooldevice ..."
 #else
-#   $snapshotname = `cat snapshotname.txt`
-#   sudo timeshift --delete-all --yes 
+#   if [ -f ./snapshotname.txt ]; then
+#        sudo timeshift --delete-all --yes
+#        $snapshotname = `cat snapshotname.txt`
+#           sudo timeshift --delete --snapshot $snapshotname
+#   fi  
 #   sudo timeshift --create --yes
-#   sudo timeshift --list | grep -i ">" | awk '{print $3}' > snapshotname.txt
+#   sudo timeshift --list | grep -i ">" | awk '{print $3}' > ./snapshotname.txt
 #fi
 
 #### add user user
