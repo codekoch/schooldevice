@@ -34,8 +34,8 @@ The single offline account acts like a selfhealing account with a reset of all d
 - Open a terminal
 - su {user with admin rights}
 - change to schooldevice git directory (see installing section)
-> sudo ./install.sh restore 
-- (yes to all)
+> sudo ./install.sh reset 
+- Press Enter and choose n for no Grub re-install 
 - After restart all schooldevice installations are gone except of the schooldevice git directory
 - Login, open a terminal and change again to schooldevice git directory
 - get the latest version of schooldevie
