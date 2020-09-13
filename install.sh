@@ -28,7 +28,7 @@ else
    if [ -f ./snapshotname.txt ]; then
         snapshotname="`cat snapshotname.txt`"
         yellow_msg "searching for old snapshot $snapshotname ..." 
-        test=`sudo timeshift --list | grep -i ">" | grep -i "$snapshotname" | awk '{print $3}'´ 
+        test=`sudo timeshift --list | grep -i ">" | grep -i "$snapshotname" | awk '{print $3}'` 
         if [ "$test" == "$snapshotname" ]; then
            yellow_msg "found old snapshot $snapshotname ..."
         else
