@@ -8,7 +8,7 @@ sudo snap install blender --classic
 
 sudo apt-get install -y cura
 
-sudo apt-get install ballerburg
+sudo apt-get install -y ballerburg
 
 sudo apt-get install -y qrencode
 
