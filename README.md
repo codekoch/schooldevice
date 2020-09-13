@@ -30,7 +30,7 @@ The single offline account acts like a selfhealing account with a reset of all d
 > sudo shutdown -r now
 - Have fun with your new schooldevice 
 
-## Updating
+## Updating (experimental)
 - Open a terminal
 - su {user with admin rights}
 - change to schooldevice git directory (see installing section)
