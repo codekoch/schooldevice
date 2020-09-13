@@ -18,6 +18,8 @@ yellow_msg "adding timeshift ability ..."
 sudo apt-get install -y timeshift
 
 #if [ $1 = "update" ]; then
+#  git fetch --all
+#  git reset --hard origin/master 
 #  $snapshotname = `cat snapshotname.txt` 
 #  sudo timeshift --restore --snap $snapshotname --yes
 #else
