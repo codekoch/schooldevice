@@ -17,7 +17,12 @@ function blue_msg() {
 echo -e "\\033[34;1m${@}\033[0m"
 }
 
-#### installation of timeshift (experimental and still not working)
+#### get latest version of current system
+yellow_msg "Updating and upgrading the current system..."
+sudo apt-get update
+sudo apt-get -y upgrade
+
+#### installation of timeshift (experimental)
 if [ "$1" == "reset" ]; then
     yellow_msg "Reset...Press Enter when prompted and choose n for no GRUB re-install..."
     snapshotname="`cat snapshotname.txt`" 
