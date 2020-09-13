@@ -20,6 +20,7 @@ if [ $1 = "update" ]; then
   yellow_msg "Updating..."
   git fetch --all
   git reset --hard origin/master
+  git pull
   $snapshotname = `cat snapshotname.txt` 
   yellow_msg "Restore system with snapshot $snapshotname..."
   sudo timeshift --restore --snapshot $snapshotname --yes
