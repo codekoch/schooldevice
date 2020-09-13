@@ -34,13 +34,17 @@ The single offline account acts like a selfhealing account with a reset of all d
 - Open a terminal
 - su {user with admin rights}
 - change to schooldevice git directory (see installing section)
-- sudo ./install.sh restore (yes to all)
+> sudo ./install.sh restore 
+- (yes to all)
 - After restart all schooldevice installations are gone except of the schooldevice git directory
 - Login, open a termin and change again to schooldevice git directory
 - get the latest version of schooldevie
 > git fetch --all
+
 > git reset --hard origin/master
+
 > git pull
+
 - repeat all steps of installing section after the "> cd schooldevice" command 
 
 ## Hints
