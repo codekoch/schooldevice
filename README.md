@@ -1,8 +1,10 @@
 ![schooldevice](https://github.com/codekoch/schooldevice/blob/master/schooldevice.jpg)
 # schooldevice
-Shellscript to modify a linuxdistribution for use in school with one single offline account for multiple users.
+This project should show that it is possible to get a working operating system for school use without the usual big companies and account bindings. This should be a matter of course for the educational mission of every school and teacher.  
 
+schooldevice is a shellscript to modify a linuxdistribution for use in school with one single offline account for multiple users.
 The single offline account acts like a selfhealing account with a reset of all data after restart
+
 ## Getting Started
 - Install a new linux system based on a debian distrubution (testet with <a href=https://xubuntu.org/>Xubuntu 20.4 LTS 64bit</a>)
 - (optional) make your own changes to the fresh installed system
@@ -14,8 +16,6 @@ The single offline account acts like a selfhealing account with a reset of all d
 > git clone https://github.com/codekoch/schooldevice
 - Start the install shellscript as root 
 > cd schooldevice
-
-> chmod -R 755 *
 
 > sudo ./install.sh
 - Decide if you want to install the additional software pack (see https://github.com/codekoch/schooldevice/blob/master/software.sh)
