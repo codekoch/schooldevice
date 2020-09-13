@@ -33,7 +33,7 @@ echo -e "\\033[34;1m${@}\033[0m"
 #        yellow_msg "adding timeshift ability ..." 
 #        sudo apt-get install -y timeshift
 #    fi  
-#   yellow_msg "Creating snapshot of current system ..."  
+#   yellow_msg "Creating snapshot of current system ...[this will take a while...time for a coffee!]"  
 #   sudo timeshift --create --yes
 #   sudo timeshift --list | grep -i ">" | awk '{print $3}' > ./snapshotname.txt
 #fi
