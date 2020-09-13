@@ -22,6 +22,9 @@ yellow_msg "Updating and upgrading the current system..."
 sudo apt-get update
 sudo apt-get -y upgrade
 
+### install snap
+sudo apt-get install -y snapd
+
 #### installation of timeshift (experimental)
 if [ "$1" == "reset" ]; then
     yellow_msg "Reset...Press Enter when prompted and choose n for no GRUB re-install..."
