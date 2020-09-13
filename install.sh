@@ -19,9 +19,6 @@ echo -e "\\033[34;1m${@}\033[0m"
 #### installation of timeshift (experimental and still not working)
 if [ $1 = "reset" ]; then
   yellow_msg "Reset...Press Enter when prompted"
-#  git fetch --all
-#  git reset --hard origin/master
-#  git pull
   snapshotname="`cat snapshotname.txt`" 
   yellow_msg "Restore system with snapshot $snapshotname..."
   sudo timeshift --restore --snapshot $snapshotname --yes
