@@ -33,7 +33,7 @@ The single offline account acts like a selfhealing account with a reset of all d
 ## Updating
 - Open a terminal
 - su {user with admin rights}
-- change to schooldevice git directory (see install section)
+- change to schooldevice git directory (see installing section)
 - sudo ./install.sh restore (yes to all)
 - After restart all schooldevice installations are gone except of the schooldevice git directory
 - Login, open a termin and change again to schooldevice git directory
@@ -41,7 +41,7 @@ The single offline account acts like a selfhealing account with a reset of all d
 > git fetch --all
 > git reset --hard origin/master
 > git pull
-- repeat all steps of installation section after the "> cd schooldevice" command 
+- repeat all steps of installing section after the "> cd schooldevice" command 
 
 ## Hints
 - The selfhealing accounts username is user0 with passwort user0 
