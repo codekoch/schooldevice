@@ -39,9 +39,6 @@ The single offline account acts like a selfhealing account with a reset of all d
 - After restart all schooldevice installations are gone except of the schooldevice git directory
 - Login, open a terminal and change again to schooldevice git directory
 - get the latest version of schooldevie
-> git fetch --all
-
-> git reset --hard origin/master
 
 > git pull
 
