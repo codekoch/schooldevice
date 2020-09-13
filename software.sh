@@ -4,7 +4,7 @@ sudo apt-get install -y default-jdk
 
 sudo snap install netbeans --classic
 
-sudo apt-get install -y blender
+sudo snap install blender --classic
 
 sudo apt-get install -y cura
 
