@@ -14,6 +14,8 @@ echo -e "\\033[33;1m${@}\033[0m"
 function blue_msg() {
 echo -e "\\033[34;1m${@}\033[0m"
 }
+yellow_msg "adding timeshift ability ..." 
+sudo apt-get install -y timeshift
 
 #### add user user
 yellow_msg "adding user user0 with password user0..." 
