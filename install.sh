@@ -77,7 +77,7 @@ sudo cp scripts/resethomedir.sh /etc/init.d/
 chmod 777 /etc/init.d/resethomedir.sh
 sudo update-rc.d resethomedir.sh defaults
 sudo /etc/init.d/resethomedir.sh save
-sudo  sed -i 's/Required-Stop:     $local_fs $remote_fs dbus/Required-Stop:     $local_fs $remote_fs dbus resethomedir.sh/g' /etc/init.d/lightdm
+#sudo  sed -i 's/Required-Stop:     $local_fs $remote_fs dbus/Required-Stop:     $local_fs $remote_fs dbus resethomedir.sh/g' /etc/init.d/lightdm
 
 #### set autologin of user user0
 yellow_msg "set autologin for user0"
@@ -86,6 +86,7 @@ sudo echo '[Seat:*]' > /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo 'autologin-user=user0' >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo 'autologin-user-timeout=0' >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo "# don't sleep the screen" >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
+sudo echo 'display-setup-script=/etc/init.d/resethomedir.sh' >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo "xserver-command=X -s 0 dpms">> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 
 #### Notify that you are in a selfhealing account
