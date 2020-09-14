@@ -55,6 +55,145 @@ else
         sudo timeshift --list | grep -i ">" | awk '{print $3}' > ./snapshotname.txt
     fi  
 fi
+################!/bin/sh
+
+# Als root ausführen
+if [ `id -u` -ne 0 ];then exec sudo $0; fi
+
+# Einlesen der Release-Daten
+. /etc/lsb-release
+
+# User "keinpasswort" anlegen
+adduser --gecos ',,,' --disabled-password keinpasswort
+
+# User "keinpasswort" mit den Standardgruppenzugehörigkeiten ausstatten
+usermod -a -G adm,dialout,fax,cdrom,floppy,tape,dip,video,plugdev,fuse keinpasswort
+
+# Passwort auf einen leer-String setzen
+usermod -p U6aMy0wojraho keinpasswort
+
+# Erlaubnis das Passwort erst nach 10000 Tagen ändern zu dürfen
+passwd -n 100000 keinpasswort
+
+
+# Hilfsfunktion, um Sicherungskopien zu erstellen
+backup () {
+  test -s $1 && cp $1 $1-`date +%Y%m%d-%H%M%S`-`stat -c '%G-%U-%a' $1`
+}
+
+# Namen in der Anmeldeliste verstecken (nobody muss dann zusätzlich
+# angegeben werden).
+# Statt der Datein custom.conf können diese Einträge auch in 
+# der Datei gdm.schemas eingefügt werden. Oder man gibt den 
+# zu versteckenden Benutzern eine uid unter 1000.
+backup /etc/gdm/custom.conf
+cat <<EOFA >/etc/gdm/custom.conf
+[greeter]
+
+Exclude=nobody,ladmin,$SUDO_USER
+EOFA
+
+
+# Ab 10.10 gibt es eine Sicherheitseinstellung, welche 
+# die einwandfreien Ausführung von aufs verhindert. Ausschalten!
+if [ $DISTRIB_RELEASE = "10.10" ];then
+  backup /etc/sysctl.d/60-hardlink-restrictions-disabled
+  cat <<-EOFB >/etc/sysctl.d/60-hardlink-restrictions-disabled
+	# aufs läuft nur ohne "Hardlink restrictions". Siehe
+	# https://wiki.kubuntu.org/Security/Features/Historical
+	kernel.yama.protected_nonaccess_hardlinks=0
+EOFB
+fi
+
+# Verzeichnis für die Veränderungen erstellen
+install -d -o keinpasswort -g keinpasswort /home/.keinpasswort_rw
+
+# aufs-Schicht über das home-Verzeichnis legen
+backup /etc/fstab
+echo "none /home/keinpasswort aufs br:/home/.keinpasswort_rw:/home/keinpasswort 0 0" >> /etc/fstab
+
+# Aufruf des cleanup-script nach dem Login bzw. Logout
+for i in PostSession PostLogin; do
+  backup /etc/gdm/$i/Default
+cat <<-EOFC >/etc/gdm/$i/Default
+	#!/bin/sh
+
+	test "\$USER" = "keinpasswort" && /usr/local/bin/cleanup-keinpasswort.sh \$0
+EOFC
+  # oben erzeugte Script die richtigen Rechte zuweisen
+  chmod 755 /etc/gdm/$i/Default
+done
+
+
+# Aufruf des cleanup-script nach dem Booten, damit 
+# keine untergeschobenen Dateien überdauern.
+backup /etc/rc.local
+cat <<-EOFD >/etc/rc.local
+	#!/bin/sh
+
+	/usr/local/bin/cleanup-keinpasswort.sh \$0
+EOFD
+
+
+# cleanup-script erzeugen, welches ...
+#   1. .keinpasswort_rw reinigt und 
+#   2. das virtuelles Windows unveränderbar macht.
+backup /usr/local/bin/cleanup-keinpasswort.sh
+cat <<-\$EOFE >/usr/local/bin/cleanup-keinpasswort.sh
+	#!/bin/sh
+
+	# cleanup-script soll nur weiterlaufen, wenn
+	# keinpasswort durch aufs geschützt wird.
+	immutable=`mount -l -t aufs |grep 'none on /home/keinpasswort type aufs (rw,br:/home/.keinpasswort_rw:/home/keinpasswort)'`
+	test -n "$immutable" || exit 0;
+
+	# Lösch-Funktion, welcher zusätzliche find-Argumente übergeben werden können
+	loeschen (){
+	  # Verwaltungs-Objekte von aufs
+	  no_aufs="! -name .wh..wh.aufs ! -name .wh..wh.orph ! -name .wh..wh.plnk"
+	  # Zusätliches find-Argument speichern
+	  zusatz="$1"
+	  # Wird dieses Script als root ausgeführt, kann das folgende "rm -rf" sehr gefährlich werden --
+	  # insbesondere zu Testzwecken auf einem normalen Arbeitsrechner. Mit der folgenden Kombination
+	  # ist sichergestellt, dass wirklich nur der Inhalt von .keinpasswort_rw gelöscht wird.
+	  cd /home/.keinpasswort_rw && find . -maxdepth 1 -mindepth 1 $no_aufs $zusatz -print0|xargs -0 rm -rf
+	}
+
+	case "$1" in
+	  /etc/gdm/PostLogin/Default)
+	    # Inhalt von .keinpasswort_rw beim Login löschen. Das .pulse-Verzeichnis muss stehen
+	    # bleiben, da es sonst bei direkter Neuanmeldung zu Sound-Problemen kommen kann.
+	    loeschen "! -name .pulse"
+	    # Unter winxp das device winxp-hda.vdi auf immutable setzen. Die Einträge 
+	    # müssen an die lokale Situation angepasst sein.
+	    sudo -u keinpasswort VBoxManage storageattach winxp --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium none
+	    sudo -u keinpasswort VBoxManage modifyhd winxp-hda.vdi --type immutable
+	    sudo -u keinpasswort VBoxManage storageattach winxp --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium winxp-hda.vdi
+	    ;;
+	  /etc/gdm/PostSession/Default)
+	    # Inhalt von .keinpasswort_rw beim Logout verzögert löschen.
+	    (sleep 3; loeschen "! -name .pulse") &
+	    ;;
+	  /etc/rc.local)
+	    # Inhalt von .keinpasswort_rw beim Booten löschen, damit keine untergeschobenen
+	    # Dateien einen Neustart überdauern. Sowohl das .pulse-Verzeichnis als auch
+	    # Shell-Logins könnten sonst als Schwachstelle ausgenutzt werden.
+	    loeschen
+	    ;;
+	  *)
+	    # Nichts tun
+	    ;;
+	esac
+	exit 0
+$EOFE
+
+# oben erzeugte Script die richtigen Rechte zuweisen
+chmod 754 /usr/local/bin/cleanup-keinpasswort.sh
+
+
+
+
+
 
 #### add user user
 yellow_msg "adding user user0 with password user0..." 
