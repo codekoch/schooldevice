@@ -45,13 +45,13 @@ The single offline account acts like a selfhealing account with a reset of all d
 - repeat all steps of installing section after the "> cd schooldevice" command 
 
 ## Hints
-- The selfhealing accounts username is user0 with passwort user0 
+- The selfhealing accounts username is user0 with password user0 
 - login in as a user with admin rights and use 
 
 > sudo /etc/init.d/resethomedir.sh save
 
 to save permanent changes   
-- To build a Takeaway System (needs additional software pack):
+- To build a takeaway-live-system (needs additional software pack):
     - >su {user with admin rights}
     - >sudo mount /dev/{yourdevice} /a
     - >/usr/bin/buildLinuxLive.sh
