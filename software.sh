@@ -3,7 +3,13 @@
 ### via snap 
 sudo apt-get install -y default-jdk
 
+sudo apt-get install default-jre 
+
 sudo snap install netbeans --classic
+
+sudo snap install intellij-idea-community --classic
+
+sudo snap install --classic eclipse 
 
 sudo snap install blender --classic
 
