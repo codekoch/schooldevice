@@ -20,6 +20,8 @@ sudo snap install openboard
 ### via apt-get 
 sudo apt-get install -y cura
 
+sudo apt-get install -y vim
+
 sudo apt-get install -y ballerburg
 
 sudo apt-get install -y qrencode
