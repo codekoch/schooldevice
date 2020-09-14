@@ -13,6 +13,8 @@ sudo snap install --classic eclipse
 
 sudo snap install blender --classic
 
+sudo snap install bluej
+
 sudo snap install openboard
 
 ### via apt-get 
