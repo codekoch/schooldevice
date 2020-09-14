@@ -74,7 +74,9 @@ usermod -a -G adm,dialout,fax,cdrom,floppy,tape,dip,video,plugdev user0
 #### set selfhealing home of user user0
 yellow_msg "setup selfhealing account for user0..."
 sudo cp scripts/resethomedir.sh /etc/init.d/
+sudo cp scripts/resethomedirstart.sh /etc/init.d/
 chmod 755 /etc/init.d/resethomedir.sh
+chmod 755 /etc/init.d/resethomedirstart.sh
 sudo /etc/init.d/resethomedir.sh save
 
 #### set autologin of user user0
