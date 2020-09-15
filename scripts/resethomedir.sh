@@ -5,12 +5,12 @@ USER=user0
 TMPDIR=/home/.saves/
 ### END INIT TODO ADJUST
 cd / 
-sync
+sudo sync
 case "$1" in
      start)
          if [ -d $TMPDIR/$USER ]
          then               
-                rsync -a $TMPDIR/$USER/ /home/$USER/ --delete
+                sudo rsync -a $TMPDIR/$USER/ /home/$USER/ --delete
                 sudo rm -r -f /tmp/*
                 echo "The homedir of $USER is now resetted!"
          else 
@@ -23,7 +23,7 @@ case "$1" in
                 sudo rm -r $TMPDIR/$USER
          fi
                 sudo mkdir -p $TMPDIR/$USER
-                rsync -a /home/$USER/ $TMPDIR/$USER/ --delete
+                sudo rsync -a /home/$USER/ $TMPDIR/$USER/ --delete
                 wait
          if [ -d $TMPDIR/$USER ]
          then
