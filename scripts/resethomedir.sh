@@ -5,6 +5,7 @@ USER=user0
 TMPDIR=/home/.saves/
 ### END INIT TODO ADJUST
 cd / 
+sync
 case "$1" in
      start)
          if [ -d $TMPDIR/$USER ]
