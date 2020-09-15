@@ -1,5 +1,5 @@
 #!/bin/bash
-version='version 1.01'
+version='version 1.02'
 
 ## Get some colors
 function red_msg() {
@@ -24,6 +24,7 @@ sudo apt-get -y upgrade
 
 ### install snap
 sudo apt-get install -y snapd
+sudo apt-get install -y rsync
 
 #### installation of timeshift (experimental)
 if [ "$1" == "reset" ]; then
