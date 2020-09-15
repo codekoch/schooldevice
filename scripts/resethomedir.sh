@@ -1,14 +1,5 @@
 #!/bin/sh
-### BEGIN INIT INFO
-# Provides: Home-Dir-Resetter
-# Required-Start: $syslog $remote_fs
-# Required-Stop: $syslog $remote_fs
-# Default-Start: 1 2
-# Default-Stop:
-# Description: Reset home direction of a user while booting written by Armin Jacob & Anton Bracke
-# License: This script is licensed under GNU GPL.
-### END INIT INFO
- 
+
 ### BEGIN INIT TODO ADJUST
 USER=user0
 TMPDIR=/home/.saves/
