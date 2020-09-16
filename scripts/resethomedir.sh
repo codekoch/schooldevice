@@ -41,7 +41,7 @@ case "$1" in
          echo "Sealfhealing deactivated!"
       ;;
       *)
-         echo "Usage: $0 {start|save}"
+         echo "Usage: $0 {start|save|deactivate|activate}"
          exit 1
          ;;
 esac
