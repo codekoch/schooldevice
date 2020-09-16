@@ -48,17 +48,17 @@ The single offline account acts like a selfhealing account with a reset of all d
 - The selfhealing accounts username is user0 with password user0 
 - login in as a user with admin rights and use 
 
-> sudo /etc/init.d/resethomedir.sh save
+- > sudo /etc/init.d/resethomedir.sh save
 
-to save permanent changes 
+- to save permanent changes 
 
-> sudo /etc/init.d/resethomedir.sh dactivate
+- > sudo /etc/init.d/resethomedir.sh dactivate
 
-to turn off selfhealing of user account user0
+- to turn off selfhealing of user account user0
 
-> sudo /etc/init.d/resethomedir.sh activate
+- > sudo /etc/init.d/resethomedir.sh activate
 
-to turn on selfhealing of user account user0
+- to turn on selfhealing of user account user0
 
 - To build a takeaway-live-system (needs additional software pack):
     - >su {user with admin rights}
