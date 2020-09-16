@@ -33,10 +33,10 @@ case "$1" in
          fi
          ;;
       activate)
-         sudo  sed -i 's/display-setup-script=/display-setup-script=\/etc\/init.d\/resethomedirstart.sh/g' /etc/lightdm/lightdm.conf.d/60-autologin.conf
+         sudo  sed -i 's/display-setup-script=.*$/display-setup-script=\/etc\/init.d\/resethomedirstart.sh/g' /etc/lightdm/lightdm.conf.d/60-autologin.conf
       ;;
       deactivate)
-         sudo  sed -i 's/display-setup-script=\/etc\/init.d\/resethomedirstart.sh/display-setup-script=/g' /etc/lightdm/lightdm.conf.d/60-autologin.conf
+         sudo  sed -i 's/display-setup-script=.*$/display-setup-script=/g' /etc/lightdm/lightdm.conf.d/60-autologin.conf
       ;;
       *)
          echo "Usage: $0 {start|save}"
