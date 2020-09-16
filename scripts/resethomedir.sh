@@ -34,9 +34,11 @@ case "$1" in
          ;;
       activate)
          sudo  sed -i 's/display-setup-script=.*$/display-setup-script=\/etc\/init.d\/resethomedirstart.sh/g' /etc/lightdm/lightdm.conf.d/60-autologin.conf
+         echo "Sealfhealing activated!"
       ;;
       deactivate)
          sudo  sed -i 's/display-setup-script=.*$/display-setup-script=/g' /etc/lightdm/lightdm.conf.d/60-autologin.conf
+         echo "Sealfhealing deactivated!"
       ;;
       *)
          echo "Usage: $0 {start|save}"
