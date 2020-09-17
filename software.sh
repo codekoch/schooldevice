@@ -63,6 +63,11 @@ sudo add-apt-repository ppa:gezakovacs/ppa -y
 sudo apt-get update
 sudo apt-get install -y unetbootin
 
+#### Veyon
+sudo add-apt-repository ppa:veyon/stable -y
+sudo apt-get update
+sudo apt-get install -y veyon
+
 #### Linux Live Kit
 sudo apt-get install -y squashfs-tools
 sudo apt-get install -y genisoimage 
