@@ -7,6 +7,8 @@ sudo apt-get install default-jre
 
 sudo snap install netbeans --classic
 
+sudo apt-get install -y openjdk-8-jre openjdk-8-jdk openjdk-8-jre-headless openjdk-8-jdk-headless
+
 sudo snap install intellij-idea-community --classic
 
 sudo snap install --classic eclipse 
