@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=loadSession
+Comment=
+Exec=/usr/bin/loadSession.sh
+Icon=tap-extract
+Path=/tmp/
+Terminal=false
+StartupNotify=false

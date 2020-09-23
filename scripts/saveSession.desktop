@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=saveSession
+Comment=
+Exec=/usr/bin/saveSession.sh
+Icon=tap-create
+Path=/tmp/
+Terminal=false
+StartupNotify=false
