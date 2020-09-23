@@ -1,10 +1,10 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=loadSession
-Comment=
+Name=LOAD SESSION
+Comment=load user0 session from external media
 Exec=/usr/bin/loadSession.sh
-Icon=tap-extract
+Icon=view-sort-ascending
 Path=/tmp/
 Terminal=false
 StartupNotify=false
