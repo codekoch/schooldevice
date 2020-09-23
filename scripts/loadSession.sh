@@ -1,10 +1,5 @@
 
 #!/bin/bash  
-sudo rm -R /tmp/user0
-sudo mkdir /tmp/user0
-sudo cp $1 /tmp/user0/
-cd /tmp/user0/
-sudo tar xfvz ./$1 
-sudo rm /tmp/user0/$1
+path=`zenity --file-selection --directory --title="Choose folder with session backup" --filename=/media/user0/` 
 cd /
-sudo rsync -a /tmp/user0/ /home/user0/  --delete
+rsync -a $path/ /home/user0/ --delete
