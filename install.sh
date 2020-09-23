@@ -131,7 +131,7 @@ sudo cp scripts/loadSession.sh /usr/bin/
 sudo chmod 755 /usr/bin/saveSession.sh
 sudo chmod 755 /usr/bin/loadSession.sh
 sudo cp scripts/loadSession.desktop /home/.saves/user0/Schreibtisch/
-sudo cp scripts/saveSession.sh /home/.saves/user0/Schreibtisch/
+sudo cp scripts/saveSession.desktop /home/.saves/user0/Schreibtisch/
 sudo chmod 755 /home/.saves/user0/Schreibtisch/*.desktop
 
 yellow_msg "Do you wish to install additional software (see: https://github.com/codekoch/schooldevice/blob/master/software.sh)?"
