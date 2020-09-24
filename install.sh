@@ -93,7 +93,9 @@ sudo echo "xserver-command=X -s 0 dpms">> /etc/lightdm/lightdm.conf.d/60-autolog
 #### Notify that you are in a selfhealing account
 yellow_msg "adding autostart-script"
 sudo mkdir /home/.saves/user0/.config/
+sudo chown user0 /home/.saves/user0/.config/
 sudo mkdir /home/.saves/user0/.config/autostart/
+sudo chown user0 /home/.saves/user0/.config/autostart/
 sudo echo '[Desktop Entry]' > /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'Type=Application' >> /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'Exec=/home/user0/setbackground.sh' >> /home/.saves/user0/.config/autostart/notify.desktop
@@ -101,6 +103,7 @@ sudo echo 'Hidden=false' >> /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'NoDisplay=false' >> /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'Name=myscript' >> /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'Comment=Startup Script' >> /home/.saves/user0/.config/autostart/notify.desktop
+sudo chown user0 /home/.saves/user0/.config/autostart/notify.desktop
 
 #### set new user background
 yellow_msg "set background for user0"
