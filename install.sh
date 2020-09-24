@@ -91,18 +91,16 @@ sudo echo "# don't sleep the screen" >> /etc/lightdm/lightdm.conf.d/60-autologin
 sudo echo "xserver-command=X -s 0 dpms">> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 
 #### Notify that you are in a selfhealing account
-yellow_msg "adding notfify-script"
+yellow_msg "adding autostart-script"
 sudo mkdir /home/.saves/user0/.config/
 sudo mkdir /home/.saves/user0/.config/autostart/
 sudo echo '[Desktop Entry]' > /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'Type=Application' >> /home/.saves/user0/.config/autostart/notify.desktop
-sudo echo 'Exec=/home/user0/notify.sh' >> /home/.saves/user0/.config/autostart/notify.desktop
+sudo echo 'Exec=/home/user0/setbackground.sh' >> /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'Hidden=false' >> /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'NoDisplay=false' >> /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'Name=myscript' >> /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'Comment=Startup Script' >> /home/.saves/user0/.config/autostart/notify.desktop
-sudo cp scripts/notify.sh /home/.saves/user0/
-sudo chmod 755  /home/.saves/user0/notify.sh
 
 #### set new user background
 yellow_msg "set background for user0"
@@ -118,11 +116,10 @@ sudo echo ' done ' >> /home/.saves/user0/setbackground.sh
 sudo echo 'xset s off' >> /home/.saves/user0/setbackground.sh
 sudo echo 'xset s noblank' >> /home/.saves/user0/setbackground.sh
 sudo echo 'xset -dpms' >> /home/.saves/user0/setbackground.sh
-sudo echo 'notify-send "schooldevice" "'$version'"' >> /home/.saves/user0/setbackground.sh  
-sudo echo 'sleep 60' >> /home/.saves/user0/setbackground.sh                                                
+sudo echo 'notify-send -t 3000 "schooldevice" "'$version'"' >> /home/.saves/user0/setbackground.sh  
+sudo echo 'notify-send -t 10000 "ATTENTION:" "All local data will be lost during logout or restart!\nMake sure your data is backed up in the cloud or on an external device if necessary."' >> /home/.saves/user0/setbackground.sh                                                
 sudo echo 'pkill notify-send' >> /home/.saves/user0/setbackground.sh
 sudo chmod 755  /home/.saves/user0/setbackground.sh
-sudo echo '/home/user0/setbackground.sh &' >> /home/.saves/user0/notify.sh
 
 #### set save and load session ability
 yellow_msg "set save and load session ability"
