@@ -128,11 +128,20 @@ sudo echo '/home/user0/setbackground.sh &' >> /home/.saves/user0/notify.sh
 yellow_msg "set save and load session ability"
 sudo cp scripts/saveSession.sh /usr/bin/
 sudo cp scripts/loadSession.sh /usr/bin/
-sudo chmod 755 /usr/bin/saveSession.sh
-sudo chmod 755 /usr/bin/loadSession.sh
+sudo chown root /usr/bin/saveSession.sh
+sudo chown root /usr/bin/loadSession.sh
+sudo chmod 0755 /usr/bin/saveSession.sh
+sudo chmod 0755 /usr/bin/loadSession.sh
+sudo chgrp sudo /usr/bin/saveSession.sh
+sudo chgrp sudo /usr/bin/loadSession.sh
 sudo cp scripts/loadSession.desktop /home/.saves/user0/Schreibtisch/
 sudo cp scripts/saveSession.desktop /home/.saves/user0/Schreibtisch/
 sudo chmod 755 /home/.saves/user0/Schreibtisch/*.desktop
+sudo touch /etc/sudoers.d/saveLoadSession
+chmod 0440 /etc/sudoers.d/saveLoadSession
+sudo echo "# User privilege specification" > /etc/sudoers.d/saveLoadSession
+sudo echo "user0 ALL=(ALL:ALL) NOPASSWD:/usr/bin/saveSession.sh" >> /etc/sudoers.d/saveLoadSession
+sudo echo "user0 ALL=(ALL:ALL) NOPASSWD:/usr/bin/loadSession.sh" >> /etc/sudoers.d/saveLoadSession
 
 yellow_msg "Do you wish to install additional software (see: https://github.com/codekoch/schooldevice/blob/master/software.sh)?"
 echo -n "(y/n)? "
