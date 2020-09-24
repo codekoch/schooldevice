@@ -6,5 +6,5 @@ Comment=load user0 session from external media
 Exec=sudo /usr/bin/loadSession.sh
 Icon=view-sort-ascending
 Path=/tmp/
-Terminal=true
+Terminal=false
 StartupNotify=false
