@@ -137,6 +137,7 @@ sudo chgrp sudo /usr/bin/loadSession.sh
 sudo cp scripts/loadSession.desktop /home/.saves/user0/Schreibtisch/
 sudo cp scripts/saveSession.desktop /home/.saves/user0/Schreibtisch/
 sudo chmod 755 /home/.saves/user0/Schreibtisch/*.desktop
+sudo chown user0 /home/.saves/user0/Schreibtisch/*.desktop
 sudo echo "# User privilege specification" > saveLoadSession
 sudo echo "user0 ALL=(ALL:ALL) NOPASSWD:/usr/bin/saveSession.sh" >> saveLoadSession
 sudo echo "user0 ALL=(ALL:ALL) NOPASSWD:/usr/bin/loadSession.sh" >> saveLoadSession
