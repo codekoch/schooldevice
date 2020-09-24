@@ -2,8 +2,9 @@
 ## schooldevice - free and reliable
 This project should show that it is possible to get a working operating system for school use without the usual big commercial companies and account bindings. This should be a matter of course for the educational mission of every school and teacher.  
 
-schooldevice is a shellscript to modify a linuxdistribution for use in school with one single offline account for multiple users.
-The single offline account acts like a selfhealing account with a reset of all data after restart
+Schooldevice is a shellscript that modifies a linuxdistribution for use in school with one single offline account for multiple users.
+The single offline account acts like a selfhealing account with a reset of all data after restart. 
+Nevertheless, the current session can be saved to and restored from an external data carrier at any time. 
 
 ## Getting Started
 - Install a new linux system based on a debian distrubution (testet with <a href=https://xubuntu.org/>Xubuntu 20.4 LTS 64bit</a>)
