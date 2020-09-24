@@ -137,11 +137,11 @@ sudo chgrp sudo /usr/bin/loadSession.sh
 sudo cp scripts/loadSession.desktop /home/.saves/user0/Schreibtisch/
 sudo cp scripts/saveSession.desktop /home/.saves/user0/Schreibtisch/
 sudo chmod 755 /home/.saves/user0/Schreibtisch/*.desktop
-sudo touch /etc/sudoers.d/saveLoadSession
+sudo echo "# User privilege specification" > saveLoadSession
+sudo echo "user0 ALL=(ALL:ALL) NOPASSWD:/usr/bin/saveSession.sh" >> saveLoadSession
+sudo echo "user0 ALL=(ALL:ALL) NOPASSWD:/usr/bin/loadSession.sh" >> saveLoadSession
+sudo cp ./saveLoadSession /etc/sudoers.d/saveLoadSession
 sudo chmod 0440 /etc/sudoers.d/saveLoadSession
-sudo echo "# User privilege specification" > sudo /etc/sudoers.d/saveLoadSession
-sudo echo "user0 ALL=(ALL:ALL) NOPASSWD:/usr/bin/saveSession.sh" >> sudo /etc/sudoers.d/saveLoadSession
-sudo echo "user0 ALL=(ALL:ALL) NOPASSWD:/usr/bin/loadSession.sh" >> sudo /etc/sudoers.d/saveLoadSession
 
 yellow_msg "Do you wish to install additional software (see: https://github.com/codekoch/schooldevice/blob/master/software.sh)?"
 echo -n "(y/n)? "
