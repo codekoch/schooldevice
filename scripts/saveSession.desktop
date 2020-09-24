@@ -6,5 +6,5 @@ Comment=save user0 session on external media
 Exec=/usr/bin/saveSession.sh
 Icon=view-sort-descending
 Path=/tmp/
-Terminal=false
+Terminal=true
 StartupNotify=false
