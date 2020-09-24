@@ -120,6 +120,7 @@ sudo echo 'notify-send -t 3000 "schooldevice" "'$version'"' >> /home/.saves/user
 sudo echo 'notify-send -t 10000 "ATTENTION:" "All local data will be lost during logout or restart!\nMake sure your data is backed up in the cloud or on an external device if necessary."' >> /home/.saves/user0/setbackground.sh                                                
 sudo echo 'pkill notify-send' >> /home/.saves/user0/setbackground.sh
 sudo chmod 755  /home/.saves/user0/setbackground.sh
+sudo chown user0 /home/.saves/user0/setbackground.sh
 
 #### set save and load session ability
 yellow_msg "set save and load session ability"
