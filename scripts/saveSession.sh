@@ -1,4 +1,3 @@
-
 #!/bin/bash  
 su user0 -c 'zenity --info --text "Please close all running aplications...\n" --title "ATTENTION!"' 
 path=`su user0 -c 'zenity --file-selection --directory --title="Choose a folder for session backup" --filename=/media/user0/'` 
