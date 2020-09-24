@@ -2,8 +2,8 @@
 #
 # A list of files to exclude when backing up *nix home directories using rsync.
 #
-# Author: Ruben Barkow-Kuder <https://github.com/rubo77/rsync-homedir-excludes>
-# Version: 2019-11-30
+# Author: Ruben Barkow-Kuder <https://github.com/rubo77/rsync-homedir-excludes>, Olaf Koch  <https://github.com/codekoch/schooldevice>
+# Version: 2020-09-24
 #
 # #Usage:
 #    USER=<homedir username here>
@@ -280,6 +280,35 @@ Thumbs.db
 .config/google-chrome/Default/Application Cache
 .config/google-chrome/Default/History Index *
 .config/google-chrome/Default/Service Worker/CacheStorage
+.config/google-chrome/BrowserMetrics-spare.pma
+.config/google-chrome/CertificateRevocation
+.config/google-chrome/Crash Reports
+.config/google-chrome/Crowd Deny
+.config/google-chrome/Dictionaries
+.config/google-chrome/FileTypePolicies
+.config/google-chrome/First Run
+.config/google-chrome/Floc
+.config/google-chrome/GrShaderCache
+.config/google-chrome/Last Version
+.config/google-chrome/Local State
+.config/google-chrome/MEIPreload
+.config/google-chrome/NativeMessagingHosts
+.config/google-chrome/OriginTrials
+.config/google-chrome/PepperFlash
+.config/google-chrome/pnacl
+.config/google-chrome/Safe Browsing
+.config/google-chrome/Safe Browsing Cookies
+.config/google-chrome/Safe Browsing Cookies-journal
+.config/google-chrome/SafetyTips
+.config/google-chrome/ShaderCache
+.config/google-chrome/SingletonCookie
+.config/google-chrome/SingletonLock
+.config/google-chrome/SingletonSocket
+.config/google-chrome/SSLErrorAssistant
+.config/google-chrome/Subresource Filter
+.config/google-chrome/TLSDeprecationConfig
+.config/google-chrome/WidevineCdm
+
 
 #Chromium:
 
