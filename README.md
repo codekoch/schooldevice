@@ -45,6 +45,9 @@ The single offline account acts like a selfhealing account with a reset of all d
 - repeat all steps of installing section after the "> cd schooldevice" command 
 
 ## Hints
+- save and load your current user session:
+  ![saveloadsession](https://github.com/codekoch/schooldevice/blob/master/saveLoadSession.png)
+  the first save takes some time, but after that it is very fast thanks to rsync
 - The selfhealing accounts username is user0 with password user0 
 - login in as a user with admin rights and use 
 
