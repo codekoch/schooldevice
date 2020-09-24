@@ -50,6 +50,7 @@ The single offline account acts like a selfhealing account with a reset of all d
   ![saveloadsession](https://github.com/codekoch/schooldevice/blob/master/saveLoadSession.png)
   
   the first save takes some time, but after that it is very fast thanks to rsync
+  
   (use an external device with FAT32 filesystem and don't forget to eject before disconnecting)
 - The selfhealing accounts username is user0 with password user0 
 - login in as a user with admin rights and use 
