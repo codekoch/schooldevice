@@ -5,8 +5,4 @@ cd /
 rsync -a /home/user0/ $path/ --delete | su user0 -c 'notify-send "Saving session" "please wait ..."'
 su user0 -c 'notify-send "Session saved" "to '$path'"'
  
-sleep 60
- 
-pkill notify-send
-
 
