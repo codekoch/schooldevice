@@ -135,6 +135,8 @@ sudo chmod 0755 /usr/bin/saveSession.sh
 sudo chmod 0755 /usr/bin/loadSession.sh
 sudo chgrp sudo /usr/bin/saveSession.sh
 sudo chgrp sudo /usr/bin/loadSession.sh
+sudo mkdir /home/.saves/user0/Schreibtisch/
+sudo chown user0 /home/.saves/user0/Schreibtisch/
 sudo cp scripts/loadSession.desktop /home/.saves/user0/Schreibtisch/
 sudo cp scripts/saveSession.desktop /home/.saves/user0/Schreibtisch/
 sudo chmod 755 /home/.saves/user0/Schreibtisch/*.desktop
