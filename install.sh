@@ -1,5 +1,5 @@
 #!/bin/bash
-version='version 1.04'
+version='version 1.05'
 
 ## Get some colors
 function red_msg() {
@@ -90,6 +90,7 @@ sudo echo 'autologin-user=user0' >> /etc/lightdm/lightdm.conf.d/60-autologin.con
 sudo echo 'autologin-user-timeout=0' >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo "# don't sleep the screen" >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo "xserver-command=X -s 0 dpms">> /etc/lightdm/lightdm.conf.d/60-autologin.conf
+sudo chmod 755 /etc/lightdm/lightdm.conf.d/60-autologin.conf
 
 #### Notify that you are in a selfhealing account
 yellow_msg "adding autostart-script"
