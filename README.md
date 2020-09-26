@@ -4,7 +4,7 @@ This project should show that it is possible to get a working operating system f
 
 Schooldevice is a shellscript that modifies a linuxdistribution for use in school with one single offline account for multiple users.
 The single offline account acts like a selfhealing account with a reset of all data after restart. 
-Nevertheless, the current session can be saved to and restored from an external data carrier at any time. It's likely an account management without an account management 😉
+Nevertheless, the current session can be saved to and restored from an external data carrier at any time. It's quasi an account management without an account management 😉.
 
 ## Getting Started
 - Install a new linux system based on a debian distrubution (testet with <a href=https://xubuntu.org/>Xubuntu 20.4 LTS 64bit</a>)
