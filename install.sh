@@ -85,6 +85,7 @@ yellow_msg "set autologin for user0"
 sudo mkdir /etc/lightdm/lightdm.conf.d/
 sudo echo '[Seat:*]' > /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo 'display-setup-script=/etc/init.d/resethomedirstart.sh' >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
+sudo echo 'display-stopped-script=/etc/init.d/resethomedirstart.sh' >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo 'autologin-user=user0' >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo 'autologin-user-timeout=0' >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
 sudo echo "# don't sleep the screen" >> /etc/lightdm/lightdm.conf.d/60-autologin.conf
@@ -110,7 +111,7 @@ yellow_msg "set background for user0"
 sudo cp schooldevice.png /usr/share/backgrounds/xfce/
 sudo chmod 755 /usr/share/backgrounds/xfce/schooldevice.png
 sudo echo '#!/bin/bash' > /home/.saves/user0/setbackground.sh
-sudo echo 'sleep 5' >> /home/.saves/user0/setbackground.sh
+sudo echo 'sleep 2' >> /home/.saves/user0/setbackground.sh
 sudo echo 'notify-send -t 10000 "ATTENTION:" "All local data will be lost during logout or restart!\nMake sure your data is backed up in the cloud or on an external device if necessary."' >> /home/.saves/user0/setbackground.sh                                                
 sudo echo 'notify-send -t 5000 "schooldevice" "'$version'"' >> /home/.saves/user0/setbackground.sh  
 sudo echo 'xfconf-query --channel xfce4-desktop --list | grep last-image | while read path; do ' >> /home/.saves/user0/setbackground.sh
