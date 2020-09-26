@@ -68,7 +68,7 @@ user0
 
 Y
 EOF
-
+sudo passwd -d user0
 #### set group rights
 usermod -a -G adm,dialout,fax,cdrom,floppy,tape,dip,video,plugdev user0 
 
