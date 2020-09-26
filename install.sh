@@ -110,6 +110,8 @@ yellow_msg "set background for user0"
 sudo cp schooldevice.png /usr/share/backgrounds/xfce/
 sudo chmod 755 /usr/share/backgrounds/xfce/schooldevice.png
 sudo echo '#!/bin/bash' > /home/.saves/user0/setbackground.sh
+sudo echo 'notify-send -t 10000 "ATTENTION:" "All local data will be lost during logout or restart!\nMake sure your data is backed up in the cloud or on an external device if necessary."' >> /home/.saves/user0/setbackground.sh                                                
+sudo echo 'notify-send -t 5000 "schooldevice" "'$version'"' >> /home/.saves/user0/setbackground.sh  
 sudo echo 'xfconf-query --channel xfce4-desktop --list | grep last-image | while read path; do ' >> /home/.saves/user0/setbackground.sh
 sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set /usr/share/backgrounds/xfce/schooldevice.png' >> /home/.saves/user0/setbackground.sh
 sudo echo ' done ' >> /home/.saves/user0/setbackground.sh
@@ -119,9 +121,6 @@ sudo echo ' done ' >> /home/.saves/user0/setbackground.sh
 sudo echo 'xset s off' >> /home/.saves/user0/setbackground.sh
 sudo echo 'xset s noblank' >> /home/.saves/user0/setbackground.sh
 sudo echo 'xset -dpms' >> /home/.saves/user0/setbackground.sh
-sudo echo 'notify-send -t 3000 "schooldevice" "'$version'"' >> /home/.saves/user0/setbackground.sh  
-sudo echo 'notify-send -t 10000 "ATTENTION:" "All local data will be lost during logout or restart!\nMake sure your data is backed up in the cloud or on an external device if necessary."' >> /home/.saves/user0/setbackground.sh                                                
-sudo echo 'pkill notify-send' >> /home/.saves/user0/setbackground.sh
 sudo chmod 755  /home/.saves/user0/setbackground.sh
 sudo chown user0 /home/.saves/user0/setbackground.sh
 
