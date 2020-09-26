@@ -4,4 +4,4 @@ path=`su user0 -c 'zenity --file-selection --directory --title="Choose a folder 
 cd /
 wget https://raw.githubusercontent.com/codekoch/schooldevice/master/scripts/rsync-homedir-local.txt -O rsync-homedir-local.txt
 chmod 777 rsync-homedir-local.txt
-rsync -a  --exclude-from=rsync-homedir-local.txt --progress /home/user0/ $path/ --delete | su user0 -c 'zenity --title "Session" --text "Saving to '$path'...\n(Please wait for Ok Button)" --progress --pulsate --auto-kill'
+rsync -a  --exclude-from=rsync-homedir-local.txt --progress /home/user0/ $path/ --delete | su user0 -c 'zenity --title "Session" --text "Saving to '$path'\nPlease wait for Ok button..." --progress --pulsate --auto-kill'
