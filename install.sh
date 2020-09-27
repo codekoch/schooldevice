@@ -100,7 +100,7 @@ sudo mkdir /home/.saves/user0/.config/autostart/
 sudo chown user0 /home/.saves/user0/.config/autostart/
 sudo echo '[Desktop Entry]' > /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'Type=Application' >> /home/.saves/user0/.config/autostart/notify.desktop
-sudo echo 'Exec=/user/bin/setbackground.sh' >> /home/.saves/user0/.config/autostart/notify.desktop
+sudo echo 'Exec=/usr/bin/setbackground.sh' >> /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'Hidden=false' >> /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'NoDisplay=false' >> /home/.saves/user0/.config/autostart/notify.desktop
 sudo echo 'Name=myscript' >> /home/.saves/user0/.config/autostart/notify.desktop
@@ -111,20 +111,20 @@ sudo chown user0 /home/.saves/user0/.config/autostart/notify.desktop
 yellow_msg "set background for user0"
 sudo cp schooldevice.png /usr/share/backgrounds/xfce/
 sudo chmod 755 /usr/share/backgrounds/xfce/schooldevice.png
-sudo echo '#!/bin/bash' > /user/bin/setbackground.sh
-sudo echo 'sleep 4' >> /user/bin/setbackground.sh
-sudo echo 'notify-send -t 10000 "ATTENTION:" "All local data will be lost during logout or restart!\nMake sure your data is backed up in the cloud or on an external device if necessary."' >> /user/bin/setbackground.sh                                                
-sudo echo 'notify-send -t 5000 "schooldevice" "'$version'"' >> /user/bin/setbackground.sh
-sudo echo 'xfconf-query --channel xfce4-desktop --list | grep last-image | while read path; do ' >> /user/bin/setbackground.sh
-sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set /usr/share/backgrounds/xfce/schooldevice.png' >> /user/bin/setbackground.sh
-sudo echo ' done ' >> /user/bin/setbackground.sh
-sudo echo 'xfconf-query --channel xfce4-desktop --list | grep image-style | while read path; do ' /user/bin/setbackground.sh
-sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set 1' >> /user/bin/setbackground.sh
-sudo echo ' done ' >> /user/bin/setbackground.sh
-sudo echo 'xset s off' >> /user/bin/setbackground.sh
-sudo echo 'xset s noblank' >> /user/bin/setbackground.sh
-sudo echo 'xset -dpms' >> /user/bin/setbackground.sh
-sudo chmod 755  /user/bin/setbackground.sh
+sudo echo '#!/bin/bash' > /usr/bin/setbackground.sh
+sudo echo 'sleep 4' >> /usr/bin/setbackground.sh
+sudo echo 'notify-send -t 10000 "ATTENTION:" "All local data will be lost during logout or restart!\nMake sure your data is backed up in the cloud or on an external device if necessary."' >> /usr/bin/setbackground.sh                                                
+sudo echo 'notify-send -t 5000 "schooldevice" "'$version'"' >> /usr/bin/setbackground.sh
+sudo echo 'xfconf-query --channel xfce4-desktop --list | grep last-image | while read path; do ' >> /usr/bin/setbackground.sh
+sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set /usr/share/backgrounds/xfce/schooldevice.png' >> /usr/bin/setbackground.sh
+sudo echo ' done ' >> /usr/bin/setbackground.sh
+sudo echo 'xfconf-query --channel xfce4-desktop --list | grep image-style | while read path; do ' /usr/bin/setbackground.sh
+sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set 1' >> /usr/bin/setbackground.sh
+sudo echo ' done ' >> /usr/bin/setbackground.sh
+sudo echo 'xset s off' >> /usr/bin/setbackground.sh
+sudo echo 'xset s noblank' >> /usr/bin/setbackground.sh
+sudo echo 'xset -dpms' >> /usr/bin/setbackground.sh
+sudo chmod 755  /usr/bin/setbackground.sh
 
 #### set save and load session ability
 yellow_msg "set save and load session ability"
