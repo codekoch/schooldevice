@@ -3,7 +3,8 @@
 This project should show that it is possible to get a working operating system for school use without the usual big commercial companies and account bindings. This should be a matter of course for the educational mission of every school and teacher.  
 
 Schooldevice is a shellscript that modifies a linuxdistribution for use in school with one single offline account for multiple users.
-The single offline account acts like a selfhealing account with a reset of all data after restart.\n 
+The single offline account acts like a selfhealing account with a reset of all data after restart.
+
 Nevertheless, the current session can be saved to and restored from an external data carrier at any time. Thus the account management is the responsibility of the users and not of the administrators.
 
 ## Getting Started
