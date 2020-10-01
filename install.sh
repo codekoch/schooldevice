@@ -128,6 +128,7 @@ sudo chmod 755  /usr/bin/setbackground.sh
 
 #### set save and load session ability
 yellow_msg "set save and load session ability"
+desktop_path=$(xdg-user-dir DESKTOP)
 sudo cp scripts/saveSession.sh /usr/bin/
 sudo cp scripts/loadSession.sh /usr/bin/
 sudo chown root /usr/bin/saveSession.sh
@@ -138,10 +139,10 @@ sudo chgrp sudo /usr/bin/saveSession.sh
 sudo chgrp sudo /usr/bin/loadSession.sh
 sudo mkdir /home/.saves/user0/Schreibtisch/
 sudo chown user0 /home/.saves/user0/Schreibtisch/
-sudo cp scripts/loadSession.desktop /home/.saves/user0/Schreibtisch/
-sudo cp scripts/saveSession.desktop /home/.saves/user0/Schreibtisch/
-sudo chmod 755 /home/.saves/user0/Schreibtisch/*.desktop
-sudo chown user0 /home/.saves/user0/Schreibtisch/*.desktop
+sudo cp scripts/loadSession.desktop /home/.saves/user0/$desktop_path/
+sudo cp scripts/saveSession.desktop /home/.saves/user0/$desktop_path/
+sudo chmod 755 /home/.saves/user0/$desktop_path/*.desktop
+sudo chown user0 /home/.saves/user0/$desktop_path/*.desktop
 sudo echo "# User privilege specification" > saveLoadSession
 sudo echo "user0 ALL=(ALL:ALL) NOPASSWD:/usr/bin/saveSession.sh" >> saveLoadSession
 sudo echo "user0 ALL=(ALL:ALL) NOPASSWD:/usr/bin/loadSession.sh" >> saveLoadSession
