@@ -128,7 +128,7 @@ sudo chmod 755  /usr/bin/setbackground.sh
 
 #### set save and load session ability
 yellow_msg "set save and load session ability"
-desktop_path=$(xdg-user-dir DESKTOP)
+desktop_path=$(xdg-user-dir DESKTOP | grep -Eo '[^/]+/?$')  
 sudo cp scripts/saveSession.sh /usr/bin/
 sudo cp scripts/loadSession.sh /usr/bin/
 sudo chown root /usr/bin/saveSession.sh
@@ -137,8 +137,8 @@ sudo chmod 0755 /usr/bin/saveSession.sh
 sudo chmod 0755 /usr/bin/loadSession.sh
 sudo chgrp sudo /usr/bin/saveSession.sh
 sudo chgrp sudo /usr/bin/loadSession.sh
-sudo mkdir /home/.saves/user0/Schreibtisch/
-sudo chown user0 /home/.saves/user0/Schreibtisch/
+sudo mkdir /home/.saves/user0/$desktop_path/
+sudo chown user0 /home/.saves/user0/$desktop_path/
 sudo cp scripts/loadSession.desktop /home/.saves/user0/$desktop_path/
 sudo cp scripts/saveSession.desktop /home/.saves/user0/$desktop_path/
 sudo chmod 755 /home/.saves/user0/$desktop_path/*.desktop
