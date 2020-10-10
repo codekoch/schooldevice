@@ -17,6 +17,8 @@ sudo snap install blender --classic
 
 sudo snap install bluej
 
+sudo snap install arduino
+
 sudo snap install openboard
 
 ### via apt-get 
