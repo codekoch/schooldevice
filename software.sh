@@ -22,6 +22,8 @@ sudo snap install arduino
 sudo snap install openboard
 
 ### via apt-get 
+sudo apt-get install arduino
+
 sudo apt-get install -y cura
 
 sudo apt-get install -y ballerburg
