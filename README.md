@@ -57,7 +57,7 @@ Nevertheless, the current session can be saved to and restored from an external 
   (use an external device with FAT32 filesystem and don't forget to eject before disconnecting)
 
 ### Save changes permanently
-- login in as a user with admin rights and use (i.e. in a terminal during user0 session)
+- login in as a user with admin rights (i.e. in a terminal during user0 session) and use 
     
     - > sudo /etc/init.d/resethomedir.sh save
 
