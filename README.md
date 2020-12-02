@@ -47,7 +47,7 @@ Nevertheless, the current session can be saved to and restored from an external 
 - repeat all steps of installing section after the "> cd schooldevice" command 
 
 ## Hints
-# Save and load session (to an external device)
+### Save and load session (to an external device)
 - save and load your current user session:
 
   ![saveloadsession](https://github.com/codekoch/schooldevice/blob/master/saveLoadSession.png)
@@ -56,9 +56,9 @@ Nevertheless, the current session can be saved to and restored from an external 
   
   (use an external device with FAT32 filesystem and don't forget to eject before disconnecting)
 
-# Save changes permanently
-- login in as a user with admin rights and use 
-
+### Save changes permanently
+- login in as a user with admin rights and use (i.e. in a terminal during user0 session)
+    
     - > sudo /etc/init.d/resethomedir.sh save
 
         to save permanent changes 
@@ -71,10 +71,10 @@ Nevertheless, the current session can be saved to and restored from an external 
 
         to turn on selfhealing of user account user0
         
-# Password for user0
+### Password for user0
 - The selfhealing accounts username is user0 with password user0 
 
-# Build a takeaway-live-system 
+### Build a takeaway-live-system 
 - To build a takeaway-live-system (needs additional software pack):
     - >su {user with admin rights}
     - >sudo mount /dev/{yourdevice} /a
