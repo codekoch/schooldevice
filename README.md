@@ -32,20 +32,6 @@ Nevertheless, the current session can be saved to and restored from an external 
 > sudo shutdown -r now
 - Have fun with your new schooldevice 
 
-## Updating (experimental)
-- Open a terminal
-- su {user with admin rights}
-- change to schooldevice git directory (see installing section)
-> sudo ./install.sh reset 
-- Press Enter and choose n for no Grub re-install 
-- After restart all schooldevice installations are gone except of the schooldevice git directory
-- Login, open a terminal and change again to schooldevice git directory
-- get the latest version of schooldevie
-
-> git pull
-
-- repeat all steps of installing section after the "> cd schooldevice" command 
-
 ## Hints
 ### Save and load session (to an external device)
 - save and load your current user session:
@@ -74,4 +60,16 @@ Nevertheless, the current session can be saved to and restored from an external 
 ### Password for user0
 - The selfhealing accounts username is user0 with password user0 
 
+## Updating (experimental)
+- Open a terminal
+- su {user with admin rights}
+- change to schooldevice git directory (see installing section)
+> sudo ./install.sh reset 
+- Press Enter and choose n for no Grub re-install 
+- After restart all schooldevice installations are gone except of the schooldevice git directory
+- Login, open a terminal and change again to schooldevice git directory
+- get the latest version of schooldevie
 
+> git pull
+
+- repeat all steps of installing section after the "> cd schooldevice" command 
