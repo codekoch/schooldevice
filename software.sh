@@ -19,7 +19,10 @@ sudo snap install bluej
 
 sudo snap install arduino
 
-sudo snap install openboard
+# sudo snap install openboard currently bugged
+# fix
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak install -y flathub ch.openboard.OpenBoard
 
 ### via apt-get 
 sudo apt-get install -y cura
