@@ -74,8 +74,4 @@ Nevertheless, the current session can be saved to and restored from an external 
 ### Password for user0
 - The selfhealing accounts username is user0 with password user0 
 
-### Build a takeaway-live-system 
-- To build a takeaway-live-system (needs additional software pack):
-    - >su {user with admin rights}
-    - >sudo mount /dev/{yourdevice} /a
-    - >/usr/bin/buildLinuxLive.sh
+
