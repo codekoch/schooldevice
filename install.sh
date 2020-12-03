@@ -141,6 +141,10 @@ sudo mkdir /home/.saves/user0/$desktop_path/
 sudo chown user0 /home/.saves/user0/$desktop_path/
 sudo cp scripts/loadSession.desktop /home/.saves/user0/$desktop_path/
 sudo cp scripts/saveSession.desktop /home/.saves/user0/$desktop_path/
+sudo cp scripts/loadSession.desktop /usr/share/applications/
+sudo cp scripts/saveSession.desktop /usr/share/applications/
+sudo chmod 755 /usr/share/applications/loadSession.desktop
+sudo chmod 755 /usr/share/applications/saveSession.desktop
 sudo chmod 755 /home/.saves/user0/$desktop_path/*.desktop
 sudo chown user0 /home/.saves/user0/$desktop_path/*.desktop
 sudo echo "# User privilege specification" > saveLoadSession
