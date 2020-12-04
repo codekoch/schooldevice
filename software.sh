@@ -21,6 +21,7 @@ sudo snap install arduino
 
 # sudo snap install openboard currently bugged
 # fix
+sudo apt-get install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak install -y flathub ch.openboard.OpenBoard
 
@@ -30,8 +31,6 @@ sudo apt-get install -y cura
 sudo apt-get install -y ballerburg
 
 sudo apt-get install -y qrencode
-
-sudo apt-get install -y flatpak
 
 sudo apt-get install -y geogebra
 
@@ -73,9 +72,9 @@ sudo apt-get update
 sudo apt-get install -y unetbootin
 
 #### Veyon
-#sudo add-apt-repository ppa:veyon/stable -y
-#sudo apt-get update
-#sudo apt-get install -y veyon
+sudo add-apt-repository ppa:veyon/stable -y
+sudo apt-get update
+sudo apt-get install -y veyon
 
 #### Linux Live Kit
 #sudo apt-get install -y squashfs-tools
