@@ -27,34 +27,34 @@ sudo apt-get install -y snapd
 sudo apt-get install -y rsync
 
 #### installation of timeshift (experimental)
-if [ "$1" == "reset" ]; then
-    yellow_msg "Reset...Press Enter when prompted and choose n for no GRUB re-install..."
-    snapshotname="`cat snapshotname.txt`" 
-    yellow_msg "Restore system with snapshot $snapshotname..."
-    sudo timeshift --restore --snapshot $snapshotname --yes
-    yellow_msg "Continue with new installation of schooldevice ..."
-else
-   if [ -f ./snapshotname.txt ]; then
-        snapshotname="`cat snapshotname.txt`"
-        yellow_msg "searching for old snapshot $snapshotname ..." 
-        test=`sudo timeshift --list | grep -i ">" | grep -i "$snapshotname" | awk '{print $3}'` 
-        if [ "$test" == "$snapshotname" ]; then
-           yellow_msg "found old snapshot $snapshotname. No need for new snapshot ..."
-        else
-          yellow_msg "adding timeshift ability ..." 
-          sudo apt-get install -y timeshift
-          yellow_msg "Creating snapshot of current system ...\n[this will take a while...time for a coffee!]"  
-          sudo timeshift --create --yes
-          sudo timeshift --list | grep -i ">" | awk '{print $3}' > ./snapshotname.txt
-        fi
-    else
-        yellow_msg "adding timeshift ability ..." 
-        sudo apt-get install -y timeshift
-        yellow_msg "Creating snapshot of current system ...[this will take a while...time for a coffee!]"  
-        sudo timeshift --create --yes
-        sudo timeshift --list | grep -i ">" | awk '{print $3}' > ./snapshotname.txt
-    fi  
-fi
+#if [ "$1" == "reset" ]; then
+#    yellow_msg "Reset...Press Enter when prompted and choose n for no GRUB re-install..."
+#    snapshotname="`cat snapshotname.txt`" 
+#    yellow_msg "Restore system with snapshot $snapshotname..."
+#    sudo timeshift --restore --snapshot $snapshotname --yes
+#    yellow_msg "Continue with new installation of schooldevice ..."
+#else
+#   if [ -f ./snapshotname.txt ]; then
+#        snapshotname="`cat snapshotname.txt`"
+#        yellow_msg "searching for old snapshot $snapshotname ..." 
+#        test=`sudo timeshift --list | grep -i ">" | grep -i "$snapshotname" | awk '{print $3}'` 
+#        if [ "$test" == "$snapshotname" ]; then
+#           yellow_msg "found old snapshot $snapshotname. No need for new snapshot ..."
+#        else
+#          yellow_msg "adding timeshift ability ..." 
+#          sudo apt-get install -y timeshift
+#          yellow_msg "Creating snapshot of current system ...\n[this will take a while...time for a coffee!]"  
+#          sudo timeshift --create --yes
+#          sudo timeshift --list | grep -i ">" | awk '{print $3}' > ./snapshotname.txt
+#        fi
+#    else
+#        yellow_msg "adding timeshift ability ..." 
+#        sudo apt-get install -y timeshift
+#        yellow_msg "Creating snapshot of current system ...[this will take a while...time for a coffee!]"  
+#        sudo timeshift --create --yes
+#        sudo timeshift --list | grep -i ">" | awk '{print $3}' > ./snapshotname.txt
+#    fi  
+#fi
 
 #### add user user
 yellow_msg "adding user user0 with password user0..." 
