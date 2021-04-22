@@ -19,11 +19,6 @@ sudo snap install bluej
 
 sudo snap install arduino
 
-# sudo snap install openboard currently bugged
-# fix
-sudo apt-get install -y flatpak
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpak install -y flathub ch.openboard.OpenBoard
 
 ### via apt-get 
 sudo apt-get install -y cura
@@ -61,6 +56,10 @@ sudo apt-get install -y stellarium
 #### Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install -y ./google-chrome-stable_current_amd64.deb
+
+#### Openboard
+wget https://github.com/OpenBoard-org/OpenBoard/releases/download/v1.6.0a1/openboard_ubuntu_20.04_1.6.0-a.1_amd64.deb
+sudo apt install -y ./openboard_ubuntu_20.04_1.6.0-a.1_amd64.deb
 
 #### Greenfoot
 wget http://www.greenfoot.org/download/files/Greenfoot-linux-361.deb
