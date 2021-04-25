@@ -79,6 +79,11 @@ sudo apt-get install -y unetbootin
 sudo apt-get install -y virtualbox
 sudo apt-get install -y virtualbox—ext–pack
 
+### xrdp
+sudo apt-get install -y xrdp
+sudo adduser xrdp ssl-cert
+sudo systemctl restart xrdp
+
 ### apache guacamole
 sudo add-apt-repository ppa:remmina-ppa-team/freerdp-daily
 sudo apt-get update
@@ -91,15 +96,12 @@ sudo echo 'basic-user-mapping: /etc/guacamole/user-mapping.xml' >> /etc/guacamol
 sudo echo '<user-mapping>' > /etc/guacamole/user-mapping.xml
 sudo echo ' ' >> /etc/guacamole/user-mapping.xml
 sudo echo '    <authorize username="USERNAME" password="PASSWORD"> ' >> /etc/guacamole/user-mapping.xml
-sudo echo '        <protocol>vnc</protocol> ' >> /etc/guacamole/user-mapping.xml
+sudo echo '        <protocol>rdp</protocol> ' >> /etc/guacamole/user-mapping.xml
 sudo echo '        <param name="hostname">localhost</param> ' >> /etc/guacamole/user-mapping.xml
-sudo echo '        <param name="port">5901</param>' >> /etc/guacamole/user-mapping.xml
-sudo echo '        <param name="password">VNCPASS</param>' >> /etc/guacamole/user-mapping.xml
+sudo echo '        <param name="port">3389</param>' >> /etc/guacamole/user-mapping.xml
 sudo echo '    </authorize>' >> /etc/guacamole/user-mapping.xml
 sudo echo '</user-mapping>' >> /etc/guacamole/user-mapping.xml
-
 sudo systemctl restart tomcat9 guacd
-
 
 
 #### Linux Live Kit
