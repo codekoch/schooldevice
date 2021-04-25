@@ -85,7 +85,7 @@ sudo adduser xrdp ssl-cert
 sudo systemctl restart xrdp
 
 ### apache guacamole
-sudo add-apt-repository ppa:remmina-ppa-team/freerdp-daily
+sudo add-apt-repository ppa:remmina-ppa-team/freerdp-daily -y
 sudo apt-get update
 sudo apt-get install -y freerdp2-dev freerdp2-x11
 wget https://git.io/fxZq5 -O guac-install.sh
