@@ -97,13 +97,7 @@ sudo echo '        <param name="port">5901</param>' >> /etc/guacamole/user-mappi
 sudo echo '        <param name="password">VNCPASS</param>' >> /etc/guacamole/user-mapping.xml
 sudo echo '    </authorize>' >> /etc/guacamole/user-mapping.xml
 sudo echo '</user-mapping>' >> /etc/guacamole/user-mapping.xml
-sudo apt-get install -y tightvncserver
-# Configure VNC password
-umask 0077                                        # use safe default permissions
-mkdir -p "$HOME/.vnc"                             # create config directory
-chmod go-rwx "$HOME/.vnc"                         # enforce safe permissions
-vncpasswd -f <<<"VNCPASS" >"$HOME/.vnc/passwd"  # generate and write a password
-touch ~/.Xresources
+
 sudo systemctl restart tomcat9 guacd
 
 
