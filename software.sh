@@ -87,6 +87,19 @@ wget https://git.io/fxZq5 -O guac-install.sh
 chmod +x guac-install.sh
 sudo ./guac-install.sh --mysqlpwd ittaskteam --guacpwd schooldevice --nomfa --installmysql
 sudo apt-get install -y tightvncserver
+sudo echo 'auth-provider: net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider' >> /etc/guacamole/guacamole.properties
+sudo echo 'basic-user-mapping: /etc/guacamole/user-mapping.xml' >> /etc/guacamole/guacamole.properties
+sudo echo '<user-mapping>' > /etc/guacamole/user-mapping.xml
+sudo echo ' ' >> /etc/guacamole/user-mapping.xml
+sudo echo '    <authorize username="USERNAME" password="PASSWORD"> ' >> /etc/guacamole/user-mapping.xml
+sudo echo '        <protocol>vnc</protocol> ' >> /etc/guacamole/user-mapping.xml
+sudo echo '        <param name="hostname">localhost</param> ' >> /etc/guacamole/user-mapping.xml
+sudo echo '        <param name="port">5900</param>' >> /etc/guacamole/user-mapping.xml
+sudo echo '        <param name="password">VNCPASS</param>' >> /etc/guacamole/user-mapping.xml
+sudo echo '    </authorize>' >> /etc/guacamole/user-mapping.xml
+sudo echo '</user-mapping>' >> /etc/guacamole/user-mapping.xml
+
+sudo systemctl restart tomcat9 guacd
 
 
 
