@@ -103,6 +103,7 @@ umask 0077                                        # use safe default permissions
 mkdir -p "$HOME/.vnc"                             # create config directory
 chmod go-rwx "$HOME/.vnc"                         # enforce safe permissions
 vncpasswd -f <<<"VNCPASS" >"$HOME/.vnc/passwd"  # generate and write a password
+touch ~/.Xresources
 sudo systemctl restart tomcat9 guacd
 
 
