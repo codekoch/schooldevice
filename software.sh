@@ -85,7 +85,7 @@ sudo apt-get update
 sudo apt-get install freerdp2-dev freerdp2-x11
 wget https://git.io/fxZq5 -O guac-install.sh
 chmod +x guac-install.sh
-./guac-install.sh --mysqlpwd ittaskteam --guacpwd schooldevice --nomfa --installmysql
+sudo ./guac-install.sh --mysqlpwd ittaskteam --guacpwd schooldevice --nomfa --installmysql
 sudo apt-get install -y tightvncserver
 
 
