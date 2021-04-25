@@ -95,7 +95,7 @@ sudo echo 'auth-provider: net.sourceforge.guacamole.net.basic.BasicFileAuthentic
 sudo echo 'basic-user-mapping: /etc/guacamole/user-mapping.xml' >> /etc/guacamole/guacamole.properties
 sudo echo '<user-mapping>' > /etc/guacamole/user-mapping.xml
 sudo echo ' ' >> /etc/guacamole/user-mapping.xml
-sudo echo '    <authorize username="USERNAME" password="PASSWORD"> ' >> /etc/guacamole/user-mapping.xml
+sudo echo '    <authorize username="user0" password="schooldevice"> ' >> /etc/guacamole/user-mapping.xml
 sudo echo '        <protocol>rdp</protocol> ' >> /etc/guacamole/user-mapping.xml
 sudo echo '        <param name="hostname">localhost</param> ' >> /etc/guacamole/user-mapping.xml
 sudo echo '        <param name="port">3389</param>' >> /etc/guacamole/user-mapping.xml
