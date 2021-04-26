@@ -77,7 +77,7 @@ sudo apt-get install -y unetbootin
 
 ### Virtual Box
 sudo apt-get install -y virtualbox
-sudo apt-get install -y virtualbox—ext–pack
+sudo apt-get install -y virtualbox-ext-pack
 
 ### xrdp
 #sudo apt-get install -y xrdp
