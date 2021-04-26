@@ -80,28 +80,28 @@ sudo apt-get install -y virtualbox
 sudo apt-get install -y virtualbox—ext–pack
 
 ### xrdp
-sudo apt-get install -y xrdp
-sudo adduser xrdp ssl-cert
-sudo systemctl restart xrdp
+#sudo apt-get install -y xrdp
+#sudo adduser xrdp ssl-cert
+#sudo systemctl restart xrdp
 
 ### apache guacamole
-sudo add-apt-repository ppa:remmina-ppa-team/freerdp-daily -y
-sudo apt-get update
-sudo apt-get install -y freerdp2-dev freerdp2-x11
-wget https://git.io/fxZq5 -O guac-install.sh
-chmod +x guac-install.sh
-sudo ./guac-install.sh --mysqlpwd ittaskteam --guacpwd schooldevice --nomfa --installmysql
-sudo echo 'auth-provider: net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider' >> /etc/guacamole/guacamole.properties
-sudo echo 'basic-user-mapping: /etc/guacamole/user-mapping.xml' >> /etc/guacamole/guacamole.properties
-sudo echo '<user-mapping>' > /etc/guacamole/user-mapping.xml
-sudo echo ' ' >> /etc/guacamole/user-mapping.xml
-sudo echo '    <authorize username="user0" password="schooldevice"> ' >> /etc/guacamole/user-mapping.xml
-sudo echo '        <protocol>rdp</protocol> ' >> /etc/guacamole/user-mapping.xml
-sudo echo '        <param name="hostname">localhost</param> ' >> /etc/guacamole/user-mapping.xml
-sudo echo '        <param name="port">3389</param>' >> /etc/guacamole/user-mapping.xml
-sudo echo '    </authorize>' >> /etc/guacamole/user-mapping.xml
-sudo echo '</user-mapping>' >> /etc/guacamole/user-mapping.xml
-sudo systemctl restart tomcat9 guacd
+#sudo add-apt-repository ppa:remmina-ppa-team/freerdp-daily -y
+#sudo apt-get update
+#sudo apt-get install -y freerdp2-dev freerdp2-x11
+#wget https://git.io/fxZq5 -O guac-install.sh
+#chmod +x guac-install.sh
+#sudo ./guac-install.sh --mysqlpwd ittaskteam --guacpwd schooldevice --nomfa --installmysql
+#sudo echo 'auth-provider: net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider' >> /etc/guacamole/guacamole.properties
+#sudo echo 'basic-user-mapping: /etc/guacamole/user-mapping.xml' >> /etc/guacamole/guacamole.properties
+#sudo echo '<user-mapping>' > /etc/guacamole/user-mapping.xml
+#sudo echo ' ' >> /etc/guacamole/user-mapping.xml
+#sudo echo '    <authorize username="user0" password="schooldevice"> ' >> /etc/guacamole/user-mapping.xml
+#sudo echo '        <protocol>rdp</protocol> ' >> /etc/guacamole/user-mapping.xml
+#sudo echo '        <param name="hostname">localhost</param> ' >> /etc/guacamole/user-mapping.xml
+#sudo echo '        <param name="port">3389</param>' >> /etc/guacamole/user-mapping.xml
+#sudo echo '    </authorize>' >> /etc/guacamole/user-mapping.xml
+#sudo echo '</user-mapping>' >> /etc/guacamole/user-mapping.xml
+#sudo systemctl restart tomcat9 guacd
 
 
 #### Linux Live Kit
