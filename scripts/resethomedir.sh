@@ -34,7 +34,7 @@ case "$1" in
          ;;
       activate)
          sudo  sed -i 's/display-setup-script=.*$/display-setup-script=\/etc\/init.d\/resethomedirstart.sh/g' /etc/lightdm/lightdm.conf.d/60-autologin.conf
-          sudo  sed -i 's/display-stoppped-script=.*$/display-stopped-script=\/etc\/init.d\/resethomedirstart.sh/g' /etc/lightdm/lightdm.conf.d/60-autologin.conf
+          sudo  sed -i 's/display-stopped-script=.*$/display-stopped-script=\/etc\/init.d\/resethomedirstart.sh/g' /etc/lightdm/lightdm.conf.d/60-autologin.conf
          sudo sed -i 's/SELFHEALING DEACTIVATED!/All local data will be lost during logout or restart!\\nMake sure your data is backed up in the cloud or on an external device if necessary./g' /usr/bin/setbackground.sh
          echo "Sealfhealing activated!"
       ;;
