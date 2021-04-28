@@ -1,5 +1,5 @@
 #!/bin/bash
-version='version 1.06'
+version='version 1.10'
 
 ## Get some colors
 function red_msg() {
