@@ -79,10 +79,9 @@ sudo apt-get install -y unetbootin
 sudo apt-get install -y virtualbox
 sudo apt-get install -y virtualbox-ext-pack
 
-### xrdp
-#sudo apt-get install -y xrdp
-#sudo adduser xrdp ssl-cert
-#sudo systemctl restart xrdp
+### vnc
+sudo apt-get install -y x11vnc
+sudo apt-get install -y tigervnc-viewer
 
 ### apache guacamole
 #sudo add-apt-repository ppa:remmina-ppa-team/freerdp-daily -y
