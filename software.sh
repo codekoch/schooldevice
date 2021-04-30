@@ -53,6 +53,9 @@ sudo apt-get install -y xournal
 
 sudo apt-get install -y stellarium 
 
+sudo apt-get install -y tigervnc-viewer
+
+
 #### Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install -y ./google-chrome-stable_current_amd64.deb
@@ -78,38 +81,6 @@ sudo apt-get install -y unetbootin
 ### Virtual Box
 sudo apt-get install -y virtualbox
 sudo apt-get install -y virtualbox-ext-pack
-
-### vnc
-sudo apt-get install -y x11vnc
-sudo apt-get install -y tigervnc-viewer
-
-### apache guacamole
-sudo add-apt-repository ppa:remmina-ppa-team/freerdp-daily -y
-sudo apt-get update
-sudo apt-get install -y freerdp2-dev freerdp2-x11
-wget https://git.io/fxZq5 -O guac-install.sh
-chmod +x guac-install.sh
-sudo ./guac-install.sh --mysqlpwd ittaskteam --guacpwd schooldevice --nomfa --installmysql
-sudo echo 'auth-provider: net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider' >> /etc/guacamole/guacamole.properties
-sudo echo 'basic-user-mapping: /etc/guacamole/user-mapping.xml' >> /etc/guacamole/guacamole.properties
-sudo echo '<user-mapping>' > /etc/guacamole/user-mapping.xml
-sudo echo ' ' >> /etc/guacamole/user-mapping.xml
-sudo echo '    <authorize username="" password=""> ' >> /etc/guacamole/user-mapping.xml
-sudo echo '        <protocol>vnc</protocol> ' >> /etc/guacamole/user-mapping.xml
-sudo echo '        <param name="hostname">localhost</param> ' >> /etc/guacamole/user-mapping.xml
-sudo echo '        <param name="port">5900</param>' >> /etc/guacamole/user-mapping.xml
-sudo echo '    </authorize>' >> /etc/guacamole/user-mapping.xml
-sudo echo '</user-mapping>' >> /etc/guacamole/user-mapping.xml
-sudo systemctl restart tomcat9 guacd
-
-### some shellscripts to connect easier
-sudo cp scripts/showVNCAddress.sh /usr/bin/
-sudo chmod 755 /usr/bin/showVNCAddress.sh
-sudo sed -i 's/Exec=.$/Exec=\/usr\/bin\/sh -c "\/usr\/bin\/showVNCAddress.sh;\/usr\/bin\/x11vnc -gui tray=setpass -shared -rfbport PROMPT -bg -o %%HOME\/.x11vnc.log.%%VNCDISPLAY"/g' /usr/share/applications/x11vnc.desktop 
-sudo cp scripts/connect2scholldevice.sh /usr/bin/
-sudo chmod 755 /usr/bin/connect2schooldevice.sh
-sudo cp scipts/x11vncConnect.desktop /usr/share/applications/
-sudo chmod 755 /usr/share/applications/x11vncConnect.desktop
 
 #### Linux Live Kit
 #sudo apt-get install -y squashfs-tools
