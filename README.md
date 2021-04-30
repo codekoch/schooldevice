@@ -40,7 +40,7 @@ Nevertheless, the current session can be saved to and restored from an external 
   
   the first save takes some time, but after that it is very fast thanks to rsync
   
-  (use an external device with FAT32 filesystem and don't forget to eject before disconnecting)
+  (Use an external device with FAT32 filesystem and don't forget to eject before disconnecting. USB 3.0 support is recommended.)
 
 ### Save changes permanently, activate, deactivate selfhealing
 - login in as a user with admin rights (i.e. in a terminal during user0 session) and use 
