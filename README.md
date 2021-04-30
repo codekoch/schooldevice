@@ -57,6 +57,10 @@ Nevertheless, the current session can be saved to and restored from an external 
 
         to turn on selfhealing of user account user0
         
+### Screenmirroring / Remote Desktop Connection between schooldevices (and other devices)
+![VNC](https://github.com/codekoch/schooldevice/blob/master/VNC.png)
+- simple connection via browser
+
 ### Password for user0
 - The selfhealing accounts username is user0 with password user0 
 
