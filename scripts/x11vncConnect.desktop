@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=X11VNC Connect
+Comment=Connect to other schooldevice
+Exec=/usr/bin/connect2schooldevice.sh
+Icon=computer           
+Path=/tmp/
+Terminal=false
+StartupNotify=false
+Categories=Network;RemoteAccess;
+Keywords=VNC;Server;Screencast
