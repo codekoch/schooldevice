@@ -62,7 +62,7 @@ Nevertheless, the current session can be saved to and restored from an external 
 - activate with <b>X11VNC Server</b>
 - connect with <b>X11VNC Connect</b>
 - (connect on every device in the same network via browseraddress http://\<ip-of-schooldevice\>:8080/guacamole)
-- no login and no passwort required (optional changes can be done in /etc/guacamole/user-mapping.xml)
+- no login and no passwort required (changes can be done in /etc/guacamole/user-mapping.xml)
 
 ### Password for user0
 - The selfhealing accounts username is user0 with password user0 
