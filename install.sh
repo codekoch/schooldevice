@@ -1,5 +1,5 @@
 #!/bin/bash
-version='version 1.11'
+version='version 1.12'
 
 ## Get some colors
 function red_msg() {
@@ -22,10 +22,12 @@ yellow_msg "Updating and upgrading the current system..."
 sudo apt-get update
 sudo apt-get -y upgrade
 
+yellow_msg "Installing some software..."
 #### install snap
 sudo apt-get install -y snapd
 sudo apt-get install -y rsync
 
+yellow_msg "Installing vnc server and web connection capability..."
 #### install screen mirroring via webbrowser
 ### install vnc-server
 sudo apt-get install -y x11vnc
