@@ -59,10 +59,11 @@ Nevertheless, the current session can be saved to and restored from an external 
         
 ### Screenmirroring / Remote Desktop Connection between schooldevices (and other devices)
 ![VNC](https://github.com/codekoch/schooldevice/blob/master/VNC.png)
-- activate with <b>X11VNC Server</b>
-- connect with <b>X11VNC Connect</b>
+- activate with <b>X11VNC Server</b> (Click <b>OK</b>, Select <b>Accept Connections</b> and Click <b>OK</b>) 
+- connect with <b>X11VNC Connect</b> (Type in <b>IP address of other schooldevice<b>)
+- Login with empty username and empty password (changes can be done in /etc/guacamole/user-mapping.xml)
 - (connect on every device in the same network via browseraddress http://\<ip-of-schooldevice\>:8080/guacamole)
-- no login and no passwort required (changes can be done in /etc/guacamole/user-mapping.xml)
+
 
 ### Password for user0
 - The selfhealing accounts username is user0 with password user0 
