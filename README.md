@@ -61,7 +61,7 @@ Nevertheless, the current session can be saved to and restored from an external 
 ![VNC](https://github.com/codekoch/schooldevice/blob/master/VNC.png)
 - activate with <b>X11VNC Server</b> (Click <b>OK</b>, Select <b>Accept Connections</b> and Click <b>OK</b>) 
 - connect with <b>X11VNC Connect</b> (Type in <b>IP address of other schooldevice</b>)
-- Login with <b>empty username and empty password</b> (changes can be done in /etc/guacamole/user-mapping.xml)
+- Login with <b>empty username</b> and <b>empty password</b> (changes can be done in /etc/guacamole/user-mapping.xml)
 - (connect on every device in the same network via browseraddress http://\<ip-of-schooldevice\>:8080/guacamole)
 
 
