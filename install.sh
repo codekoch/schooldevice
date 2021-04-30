@@ -50,6 +50,9 @@ sudo echo '        <param name="hostname">localhost</param> ' >> /etc/guacamole/
 sudo echo '        <param name="port">5900</param>' >> /etc/guacamole/user-mapping.xml
 sudo echo '    </authorize>' >> /etc/guacamole/user-mapping.xml
 sudo echo '</user-mapping>' >> /etc/guacamole/user-mapping.xml
+sudo rm -R /var/lib/tomcat9/webapps/ROOT/index.html
+sudo echo '<% response.sendRedirect("/guacamole"); %>' > /var/lib/tomcat9/webapps/ROOT/index.jsp
+sudo chmod 755 /var/lib/tomcat9/webapps/ROOT/index.jsp
 sudo systemctl restart tomcat9 guacd
 
 ### install some shellscripts and changes to connect easier
