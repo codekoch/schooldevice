@@ -57,7 +57,7 @@ Nevertheless, the current session can be saved to and restored from an external 
 
         to turn on selfhealing of user account user0
         
-### Screenmirroring / Remote Desktop Connection between schooldevices (and other devices)
+### Screenmirroring / remote desktop connection between schooldevices (and other devices)
 ![VNC](https://github.com/codekoch/schooldevice/blob/master/VNC.png)
 - <b>Activate</b> with <b>X11VNC Server</b> (Select <b>Accept Connections</b> and Click <b>OK</b>) 
 - <b>Connect</b> with <b>X11VNC Connect</b> (Type in <b>IP address of other schooldevice</b>)
