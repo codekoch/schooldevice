@@ -56,9 +56,9 @@ sudo systemctl restart tomcat9 guacd
 sudo cp scripts/showVNCAddress.sh /usr/bin/
 sudo chmod 755 /usr/bin/showVNCAddress.sh
 sudo sed -i 's/Exec=.$/Exec=\/usr\/bin\/sh -c "\/usr\/bin\/showVNCAddress.sh;\/usr\/bin\/x11vnc -gui tray=setpass -shared -rfbport PROMPT -bg -o %%HOME\/.x11vnc.log.%%VNCDISPLAY"/g' /usr/share/applications/x11vnc.desktop 
-sudo cp scripts/connect2scholldevice.sh /usr/bin/
+sudo cp scripts/connect2schooldevice.sh /usr/bin/
 sudo chmod 755 /usr/bin/connect2schooldevice.sh
-sudo cp scipts/x11vncConnect.desktop /usr/share/applications/
+sudo cp scripts/x11vncConnect.desktop /usr/share/applications/
 sudo chmod 755 /usr/share/applications/x11vncConnect.desktop
 
 #### installation of timeshift (experimental)
