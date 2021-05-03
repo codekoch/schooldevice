@@ -148,14 +148,14 @@ sudo chown user0 /home/.saves/user0/.config/autostart/notify.desktop
 
 #### set new user background
 yellow_msg "set background for user0"
-sudo cp schooldevice.png /usr/share/backgrounds/xfce/
-sudo chmod 755 /usr/share/backgrounds/xfce/schooldevice.png
+sudo cp schooldevice.png /usr/share/xfce4/backdrops/
+sudo chmod 755 /usr/share/xfce4/backdrops/schooldevice.png
 sudo echo '#!/bin/bash' > /usr/bin/setbackground.sh
 sudo echo 'sleep 4' >> /usr/bin/setbackground.sh
 sudo echo 'notify-send -t 10000 "ATTENTION:" "All local data will be lost during logout or restart!\nMake sure your data is backed up in the cloud or on an external device if necessary."' >> /usr/bin/setbackground.sh                                                
 sudo echo 'notify-send -t 5000 "schooldevice" "'$version'"' >> /usr/bin/setbackground.sh
 sudo echo 'xfconf-query --channel xfce4-desktop --list | grep last-image | while read path; do ' >> /usr/bin/setbackground.sh
-sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set /usr/share/backgrounds/xfce/schooldevice.png' >> /usr/bin/setbackground.sh
+sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set /usr/share/xfce4/backdrops/schooldevice.png' >> /usr/bin/setbackground.sh
 sudo echo ' done ' >> /usr/bin/setbackground.sh
 sudo echo 'xfconf-query --channel xfce4-desktop --list | grep image-style | while read path; do ' /usr/bin/setbackground.sh
 sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set 1' >> /usr/bin/setbackground.sh
