@@ -157,7 +157,7 @@ sudo echo 'notify-send -t 5000 "schooldevice" "'$version'"' >> /usr/bin/setbackg
 sudo echo 'xfconf-query --channel xfce4-desktop --list | grep last-image | while read path; do ' >> /usr/bin/setbackground.sh
 sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set /usr/share/xfce4/backdrops/schooldevice.png' >> /usr/bin/setbackground.sh
 sudo echo ' done ' >> /usr/bin/setbackground.sh
-sudo echo 'xfconf-query --channel xfce4-desktop --list | grep image-style | while read path; do ' /usr/bin/setbackground.sh
+sudo echo 'xfconf-query --channel xfce4-desktop --list | grep image-style | while read path; do ' >> /usr/bin/setbackground.sh
 sudo echo '    xfconf-query --channel xfce4-desktop --property $path --set 1' >> /usr/bin/setbackground.sh
 sudo echo ' done ' >> /usr/bin/setbackground.sh
 sudo echo 'xset s off' >> /usr/bin/setbackground.sh
